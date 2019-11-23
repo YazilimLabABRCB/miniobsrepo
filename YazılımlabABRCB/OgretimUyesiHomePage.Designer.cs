@@ -28,69 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.testokutmabutton = new System.Windows.Forms.Button();
-            this.sorubazlisonucbutton = new System.Windows.Forms.Button();
-            this.kazanimbazlisonucbutton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(100, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Yapmak İstediğiniz İşlem Türünü Seçiniz";
-            // 
-            // testokutmabutton
-            // 
-            this.testokutmabutton.Location = new System.Drawing.Point(119, 203);
-            this.testokutmabutton.Name = "testokutmabutton";
-            this.testokutmabutton.Size = new System.Drawing.Size(143, 23);
-            this.testokutmabutton.TabIndex = 1;
-            this.testokutmabutton.Text = "TEST OKUTMA";
-            this.testokutmabutton.UseVisualStyleBackColor = true;
-            // 
-            // sorubazlisonucbutton
-            // 
-            this.sorubazlisonucbutton.Location = new System.Drawing.Point(119, 163);
-            this.sorubazlisonucbutton.Name = "sorubazlisonucbutton";
-            this.sorubazlisonucbutton.Size = new System.Drawing.Size(143, 23);
-            this.sorubazlisonucbutton.TabIndex = 2;
-            this.sorubazlisonucbutton.Text = "SORU BAZLI SONUÇ";
-            this.sorubazlisonucbutton.UseVisualStyleBackColor = true;
-            // 
-            // kazanimbazlisonucbutton
-            // 
-            this.kazanimbazlisonucbutton.Location = new System.Drawing.Point(119, 120);
-            this.kazanimbazlisonucbutton.Name = "kazanimbazlisonucbutton";
-            this.kazanimbazlisonucbutton.Size = new System.Drawing.Size(143, 23);
-            this.kazanimbazlisonucbutton.TabIndex = 3;
-            this.kazanimbazlisonucbutton.Text = "KAZANIM BAZLI SONUÇ";
-            this.kazanimbazlisonucbutton.UseVisualStyleBackColor = true;
-            // 
-            // KullaniciHomePage
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 440);
-            this.Controls.Add(this.kazanimbazlisonucbutton);
-            this.Controls.Add(this.sorubazlisonucbutton);
-            this.Controls.Add(this.testokutmabutton);
-            this.Controls.Add(this.label1);
-            this.Name = "KullaniciHomePage";
-            this.Text = "KullaniciHomePage";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.kAZANIMBAZLISONUÇToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.sORUBAZLISONUÇToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tESTOKUTMAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuStrip1.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// menuStrip1
+			// 
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kAZANIMBAZLISONUÇToolStripMenuItem,
+            this.sORUBAZLISONUÇToolStripMenuItem,
+            this.tESTOKUTMAToolStripMenuItem});
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Size = new System.Drawing.Size(436, 24);
+			this.menuStrip1.TabIndex = 5;
+			this.menuStrip1.Text = "menuStrip1";
+			// 
+			// kAZANIMBAZLISONUÇToolStripMenuItem
+			// 
+			this.kAZANIMBAZLISONUÇToolStripMenuItem.Name = "kAZANIMBAZLISONUÇToolStripMenuItem";
+			this.kAZANIMBAZLISONUÇToolStripMenuItem.Size = new System.Drawing.Size(149, 20);
+			this.kAZANIMBAZLISONUÇToolStripMenuItem.Text = "KAZANIM BAZLI SONUÇ";
+			this.kAZANIMBAZLISONUÇToolStripMenuItem.Click += new System.EventHandler(this.kAZANIMBAZLISONUÇToolStripMenuItem_Click);
+			// 
+			// sORUBAZLISONUÇToolStripMenuItem
+			// 
+			this.sORUBAZLISONUÇToolStripMenuItem.Name = "sORUBAZLISONUÇToolStripMenuItem";
+			this.sORUBAZLISONUÇToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
+			this.sORUBAZLISONUÇToolStripMenuItem.Text = "SORU BAZLI SONUÇ";
+			this.sORUBAZLISONUÇToolStripMenuItem.Click += new System.EventHandler(this.sORUBAZLISONUÇToolStripMenuItem_Click);
+			// 
+			// tESTOKUTMAToolStripMenuItem
+			// 
+			this.tESTOKUTMAToolStripMenuItem.Name = "tESTOKUTMAToolStripMenuItem";
+			this.tESTOKUTMAToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+			this.tESTOKUTMAToolStripMenuItem.Text = "TEST OKUTMA";
+			this.tESTOKUTMAToolStripMenuItem.Click += new System.EventHandler(this.tESTOKUTMAToolStripMenuItem_Click);
+			// 
+			// OgretimUyesiHomePage
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(436, 440);
+			this.Controls.Add(this.menuStrip1);
+			this.IsMdiContainer = true;
+			this.Name = "OgretimUyesiHomePage";
+			this.Text = "Kullanıcı - Home Page";
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button testokutmabutton;
-        private System.Windows.Forms.Button sorubazlisonucbutton;
-        private System.Windows.Forms.Button kazanimbazlisonucbutton;
-    }
+		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem kAZANIMBAZLISONUÇToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem sORUBAZLISONUÇToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem tESTOKUTMAToolStripMenuItem;
+	}
 }
