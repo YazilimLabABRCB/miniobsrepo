@@ -61,5 +61,10 @@ namespace YazılımlabABRCB
 				MessageBox.Show("Zaten mevcut pencere açık!", "HATA: Devam Eden İşlem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+
+		private void OgretimUyesiHomePage_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

@@ -36,7 +36,9 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.Name = "OgretimUyesiKazanimBazliSonuc";
+			this.ShowIcon = false;
 			this.Text = "Kullanıcı - Kazanım Bazlı Sonuç";
+			this.Load += new System.EventHandler(this.OgretimUyesiKazanimBazliSonuc_Load);
 			this.ResumeLayout(false);
 
         }

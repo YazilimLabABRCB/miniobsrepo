@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
 
 namespace YazılımlabABRCB
 {
@@ -16,5 +17,10 @@ namespace YazılımlabABRCB
         {
             InitializeComponent();
         }
-    }
+
+		private void OgretimUyesiSoruBazliSonuc_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

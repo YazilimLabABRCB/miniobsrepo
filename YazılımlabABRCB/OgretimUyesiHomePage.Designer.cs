@@ -75,8 +75,11 @@
 			this.ClientSize = new System.Drawing.Size(436, 440);
 			this.Controls.Add(this.menuStrip1);
 			this.IsMdiContainer = true;
+			this.MaximizeBox = false;
 			this.Name = "OgretimUyesiHomePage";
+			this.ShowIcon = false;
 			this.Text = "Kullanıcı - Home Page";
+			this.Load += new System.EventHandler(this.OgretimUyesiHomePage_Load);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);

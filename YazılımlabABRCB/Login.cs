@@ -30,15 +30,15 @@ namespace YazılımlabABRCB
             dr = cmd.ExecuteReader();
             if (adminnotextbox.Text == "" || adminsifretextbox.Text == "")
             {
-                MessageBox.Show("Lütfen Bilgilerinizi Doldurun");
+                MessageBox.Show("Lütfen bilgilerinizi doldurun","HATA",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else if (dr.Read())
             {
                 AdminHomePage AdminHomePage = new AdminHomePage();
                 this.Hide();
-                AdminHomePage.Show();
+                AdminHomePage.ShowDialog();
             }
-            else MessageBox.Show("Hatalı Giriş Yaptınız! Tekrar Deneyiniz");
+            else MessageBox.Show("Hatalı giriş yaptınız! Lütfen tekrar deneyiniz", "HATA", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
 
             Globals.con.Close();
 
@@ -59,7 +59,7 @@ namespace YazılımlabABRCB
             {
                 OgretimUyesiHomePage OgretimUyesiHomePage = new OgretimUyesiHomePage();
                 this.Hide();
-                OgretimUyesiHomePage.Show();
+                OgretimUyesiHomePage.ShowDialog();
             }
             else MessageBox.Show("Hatalı Giriş Yaptınız! Tekrar Deneyiniz");
             Globals.con.Close();

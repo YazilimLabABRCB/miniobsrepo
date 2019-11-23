@@ -9,6 +9,6 @@ namespace YazılımlabABRCB
 {
    public static class Globals
     {
-        public static MySqlConnection con = new MySqlConnection("Server=localhost;Database=testotomasyon;user=root;pwd='PeezCheck61.';");
+        public static MySqlConnection con = new MySqlConnection("Server=localhost;Database=TestOtomasyon;user=root;pwd='PeezCheck61.';");
     }
 }
