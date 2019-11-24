@@ -32,11 +32,14 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.bolumekle = new System.Windows.Forms.TabPage();
             this.bolumsilme = new System.Windows.Forms.TabPage();
-            this.bolumguncelleme = new System.Windows.Forms.TabPage();
-            this.bolumlisteleme = new System.Windows.Forms.TabPage();
             this.bolumgeributton1 = new System.Windows.Forms.Button();
+            this.bolumguncelleme = new System.Windows.Forms.TabPage();
             this.bolumgeributton2 = new System.Windows.Forms.Button();
+            this.bolumlisteleme = new System.Windows.Forms.TabPage();
             this.bolumgeributton3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.bolumekle.SuspendLayout();
             this.bolumsilme.SuspendLayout();
@@ -69,6 +72,9 @@
             // 
             // bolumekle
             // 
+            this.bolumekle.Controls.Add(this.label3);
+            this.bolumekle.Controls.Add(this.label2);
+            this.bolumekle.Controls.Add(this.label1);
             this.bolumekle.Controls.Add(this.bolumgeributton);
             this.bolumekle.Location = new System.Drawing.Point(4, 22);
             this.bolumekle.Name = "bolumekle";
@@ -89,26 +95,6 @@
             this.bolumsilme.Text = "Bölüm Silme";
             this.bolumsilme.UseVisualStyleBackColor = true;
             // 
-            // bolumguncelleme
-            // 
-            this.bolumguncelleme.Controls.Add(this.bolumgeributton2);
-            this.bolumguncelleme.Location = new System.Drawing.Point(4, 22);
-            this.bolumguncelleme.Name = "bolumguncelleme";
-            this.bolumguncelleme.Size = new System.Drawing.Size(410, 474);
-            this.bolumguncelleme.TabIndex = 2;
-            this.bolumguncelleme.Text = "Bölüm Güncelleme";
-            this.bolumguncelleme.UseVisualStyleBackColor = true;
-            // 
-            // bolumlisteleme
-            // 
-            this.bolumlisteleme.Controls.Add(this.bolumgeributton3);
-            this.bolumlisteleme.Location = new System.Drawing.Point(4, 22);
-            this.bolumlisteleme.Name = "bolumlisteleme";
-            this.bolumlisteleme.Size = new System.Drawing.Size(410, 474);
-            this.bolumlisteleme.TabIndex = 3;
-            this.bolumlisteleme.Text = "Bölüm Listeleme";
-            this.bolumlisteleme.UseVisualStyleBackColor = true;
-            // 
             // bolumgeributton1
             // 
             this.bolumgeributton1.Location = new System.Drawing.Point(338, 422);
@@ -118,6 +104,16 @@
             this.bolumgeributton1.Text = "Geri ";
             this.bolumgeributton1.UseVisualStyleBackColor = true;
             this.bolumgeributton1.Click += new System.EventHandler(this.bolumgeributton1_Click);
+            // 
+            // bolumguncelleme
+            // 
+            this.bolumguncelleme.Controls.Add(this.bolumgeributton2);
+            this.bolumguncelleme.Location = new System.Drawing.Point(4, 22);
+            this.bolumguncelleme.Name = "bolumguncelleme";
+            this.bolumguncelleme.Size = new System.Drawing.Size(410, 474);
+            this.bolumguncelleme.TabIndex = 2;
+            this.bolumguncelleme.Text = "Bölüm Güncelleme";
+            this.bolumguncelleme.UseVisualStyleBackColor = true;
             // 
             // bolumgeributton2
             // 
@@ -129,6 +125,16 @@
             this.bolumgeributton2.UseVisualStyleBackColor = true;
             this.bolumgeributton2.Click += new System.EventHandler(this.bolumgeributton2_Click);
             // 
+            // bolumlisteleme
+            // 
+            this.bolumlisteleme.Controls.Add(this.bolumgeributton3);
+            this.bolumlisteleme.Location = new System.Drawing.Point(4, 22);
+            this.bolumlisteleme.Name = "bolumlisteleme";
+            this.bolumlisteleme.Size = new System.Drawing.Size(410, 474);
+            this.bolumlisteleme.TabIndex = 3;
+            this.bolumlisteleme.Text = "Bölüm Listeleme";
+            this.bolumlisteleme.UseVisualStyleBackColor = true;
+            // 
             // bolumgeributton3
             // 
             this.bolumgeributton3.Location = new System.Drawing.Point(338, 422);
@@ -138,6 +144,33 @@
             this.bolumgeributton3.Text = "Geri ";
             this.bolumgeributton3.UseVisualStyleBackColor = true;
             this.bolumgeributton3.Click += new System.EventHandler(this.bolumgeributton3_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(78, 131);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(78, 163);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(78, 199);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "label3";
             // 
             // AdminBolum
             // 
@@ -149,6 +182,7 @@
             this.Text = "AdminBolum";
             this.tabControl1.ResumeLayout(false);
             this.bolumekle.ResumeLayout(false);
+            this.bolumekle.PerformLayout();
             this.bolumsilme.ResumeLayout(false);
             this.bolumguncelleme.ResumeLayout(false);
             this.bolumlisteleme.ResumeLayout(false);
@@ -166,5 +200,8 @@
         private System.Windows.Forms.Button bolumgeributton1;
         private System.Windows.Forms.Button bolumgeributton2;
         private System.Windows.Forms.Button bolumgeributton3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
