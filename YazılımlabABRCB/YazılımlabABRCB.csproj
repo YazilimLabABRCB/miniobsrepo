@@ -95,11 +95,11 @@
     <Compile Include="AdminHomePage.Designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminKullanıcı.cs">
+    <Compile Include="AdminOgretimUyesi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminKullanıcı.Designer.cs">
-      <DependentUpon>AdminKullanıcı.cs</DependentUpon>
+    <Compile Include="AdminOgretimUyesi.Designer.cs">
+      <DependentUpon>AdminOgretimUyesi.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminSınavSonuc.cs">
       <SubType>Form</SubType>
@@ -155,8 +155,8 @@
     <EmbeddedResource Include="AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminKullanıcı.resx">
-      <DependentUpon>AdminKullanıcı.cs</DependentUpon>
+    <EmbeddedResource Include="AdminOgretimUyesi.resx">
+      <DependentUpon>AdminOgretimUyesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminSınavSonuc.resx">
       <DependentUpon>AdminSınavSonuc.cs</DependentUpon>
