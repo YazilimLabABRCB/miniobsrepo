@@ -33,7 +33,7 @@
             // 
             // sinavsonucgeributton
             // 
-            this.sinavsonucgeributton.Location = new System.Drawing.Point(147, 440);
+            this.sinavsonucgeributton.Location = new System.Drawing.Point(347, 507);
             this.sinavsonucgeributton.Name = "sinavsonucgeributton";
             this.sinavsonucgeributton.Size = new System.Drawing.Size(72, 52);
             this.sinavsonucgeributton.TabIndex = 5;
