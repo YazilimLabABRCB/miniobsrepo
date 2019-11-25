@@ -23,5 +23,26 @@ namespace YazılımlabABRCB
             this.Hide();
             AdminHomePage.Show();
         }
+
+        private void bolumgeributton1_Click(object sender, EventArgs e)
+        {
+            AdminHomePage AdminHomePage = new AdminHomePage();
+            this.Hide();
+            AdminHomePage.Show();
+        }
+
+        private void bolumgeributton2_Click(object sender, EventArgs e)
+        {
+            AdminHomePage AdminHomePage = new AdminHomePage();
+            this.Hide();
+            AdminHomePage.Show();
+        }
+
+        private void bolumgeributton3_Click(object sender, EventArgs e)
+        {
+            AdminHomePage AdminHomePage = new AdminHomePage();
+            this.Hide();
+            AdminHomePage.Show();
+        }
     }
 }
