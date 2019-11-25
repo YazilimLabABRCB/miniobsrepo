@@ -53,15 +53,14 @@ namespace YazılımlabABRCB
             dr = cmd.ExecuteReader();
             if (ogretimuyesinotextbox.Text == "" || ogretimuyesisifretextbox.Text == "")
             {
-                MessageBox.Show("Lütfen Bilgilerinizi Doldurun");
+                MessageBox.Show("Lütfen Bilgilerinizi Doldurun","HATA: Eksik Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else if (dr.Read())
             {
                 OgretimUyesiHomePage OgretimUyesiHomePage = new OgretimUyesiHomePage();
-                this.Hide();
                 OgretimUyesiHomePage.ShowDialog();
             }
-            else MessageBox.Show("Hatalı Giriş Yaptınız! Tekrar Deneyiniz");
+            else MessageBox.Show("Hatalı Giriş Yaptınız! Tekrar Deneyiniz","Hatalı Giriş",MessageBoxButtons.OK,MessageBoxIcon.Error);
             Globals.con.Close();
         }
     }

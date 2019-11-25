@@ -43,7 +43,7 @@
             this.tESTOKUTMAToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(436, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(689, 24);
 			this.menuStrip1.TabIndex = 5;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -72,10 +72,9 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(436, 440);
+			this.ClientSize = new System.Drawing.Size(689, 440);
 			this.Controls.Add(this.menuStrip1);
 			this.IsMdiContainer = true;
-			this.MaximizeBox = false;
 			this.Name = "OgretimUyesiHomePage";
 			this.ShowIcon = false;
 			this.Text = "Kullanıcı - Home Page";
