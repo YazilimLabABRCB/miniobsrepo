@@ -78,6 +78,7 @@
 			this.Name = "OgretimUyesiHomePage";
 			this.ShowIcon = false;
 			this.Text = "Kullanıcı - Home Page";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.OgretimUyesiHomePage_Load);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();

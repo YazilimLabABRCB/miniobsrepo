@@ -185,6 +185,7 @@
 			this.Name = "OgretimUyesiKazanimBazliSonuc";
 			this.ShowIcon = false;
 			this.Text = "Kullanıcı - Kazanım Bazlı Sonuç";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.OgretimUyesiKazanimBazliSonuc_Load);
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();

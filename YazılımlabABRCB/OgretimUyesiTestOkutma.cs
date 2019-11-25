@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
+//using Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Core;
 using System.IO;
 
@@ -20,6 +20,7 @@ namespace YazılımlabABRCB
             InitializeComponent();
         }
 
+		//Genel tanımlamalar
 		string DosyaAdi;
 
 		private void OgretimUyesiTestOkutma_Load(object sender, EventArgs e)
