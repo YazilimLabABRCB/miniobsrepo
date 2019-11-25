@@ -51,7 +51,7 @@ namespace YazılımlabABRCB
 
         private void kullanicibutton_Click(object sender, EventArgs e)
         {
-            AdminKullanıcı AdminKullanıcı = new AdminKullanıcı();
+            AdminOgretimUyesi AdminKullanıcı = new AdminOgretimUyesi();
             this.Hide();
             AdminKullanıcı.Show();
 
