@@ -100,7 +100,7 @@
             // 
             // kullanicieklemebutton
             // 
-            this.kullanicieklemebutton.Location = new System.Drawing.Point(257, 271);
+            this.kullanicieklemebutton.Location = new System.Drawing.Point(257, 275);
             this.kullanicieklemebutton.Name = "kullanicieklemebutton";
             this.kullanicieklemebutton.Size = new System.Drawing.Size(75, 23);
             this.kullanicieklemebutton.TabIndex = 18;
