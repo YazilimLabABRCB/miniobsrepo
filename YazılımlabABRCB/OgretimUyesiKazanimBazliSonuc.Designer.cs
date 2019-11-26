@@ -196,8 +196,6 @@
         }
 
 		#endregion
-
-		private System.Windows.Forms.ToolStrip toolStrip1;
 		private System.Windows.Forms.ToolStripButton yeniToolStripButton;
 		private System.Windows.Forms.ToolStripButton açToolStripButton;
 		private System.Windows.Forms.ToolStripButton kaydetToolStripButton;
@@ -206,11 +204,12 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripButton yardımToolStripButton;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
-		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem tümünüSilToolStripMenuItem;
 		private System.Windows.Forms.Label label1;
+		public System.Windows.Forms.ToolStrip toolStrip1;
+		public System.Windows.Forms.ListBox listBox1;
 	}
 }

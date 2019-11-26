@@ -10,97 +10,73 @@ using System.Windows.Forms;
 //using Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Core;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace YazılımlabABRCB
 {
-    public partial class OgretimUyesiSoruBazliSonuc : Form
+	public partial class OgretimUyesiSoruBazliSonuc : Form
     {
         public OgretimUyesiSoruBazliSonuc()
         {
             InitializeComponent();
         }
-
 		string DosyaAdi;
 
-		private void OgretimUyesiSoruBazliSonuc_Load(object sender, EventArgs e)
+		public void DuzenlemeSayfasiAc()
 		{
-
-		}
-
-		private void button1_Click(object sender, EventArgs e)
-		{
-			var lines = File.ReadAllLines(textBox1.Text, Encoding.GetEncoding("iso-8859-9"));
-			if (lines.Count() > 0)
+			if (textBox1.Text!="")
 			{
-				foreach (var columnName in lines.FirstOrDefault()
-					.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
-				{
-					dataGridView1.Columns.Add(columnName, columnName);
-				}
-				foreach (var cellValues in lines.Skip(1))
-				{
-					var cellArray = cellValues
-						.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-					if (cellArray.Length == dataGridView1.Columns.Count)
-						dataGridView1.Rows.Add(cellArray);
-				}
+				OgretimUyesiSoruBazlıDuzenleme duzenle = new OgretimUyesiSoruBazlıDuzenleme();
+				duzenle.degergonder = textBox1.Text;
+				duzenle.ShowDialog();
 			}
-
+			else
+			{
+				MessageBox.Show("Seçim boş!");
+			}
 			
-			/*
-			string rLine;
-			string[] satirDizi;
-			int i = 0;
-			DataRow dRow;
-			DataTable dt = new DataTable();
-			try
-			{
-
-				if (File.Exists(textBox1.Text))
-				{
-					StreamReader reader = File.OpenText(textBox1.Text);
-					rLine = reader.ReadLine();
-					satirDizi = rLine.Split('t');
-
-					for (int m = 0; m < satirDizi.Length; m++)
-					{
-						dt.Columns.Add(satirDizi[m]);
-					}
-
-					while (rLine != null)
-					{
-						dRow = dt.NewRow();
-						dt.Rows.Add(dRow);
-						rLine = reader.ReadLine();
-
-						if (rLine != null)
-						{
-							satirDizi = rLine.Split('t');
-						}
-
-						for (int j = 0; j < satirDizi.Length; j++)
-						{
-							dt.Rows[j]=;
-						}
-						i++;
-					}
-
-					dataGridView1.DataSource = dt;
-					reader.Close();
-				}
-				else
-					MessageBox.Show("Dosya Bulunamadı...", "Error");
-			}
-
-			catch (Exception ex)
-
-			{
-				MessageBox.Show("Hata :" + ex.ToString(), "Error");
-			}
-			*/
 		}
+		public void DonemSec()
+		{
+			MySqlConnection baglanti = new MySqlConnection();
+			baglanti.ConnectionString = "Server = localhost; Database = TestOtomasyon; user = root; pwd = 'R.cnkb0z'; ";
+			MySqlCommand donemad = new MySqlCommand();
+			donemad.CommandText = "SELECT donem_ad FROM Donem";
+			donemad.Connection = baglanti;
+			donemad.CommandType = CommandType.Text;
 
-		private void button2_Click(object sender, EventArgs e)
+			MySqlDataReader dr;
+			baglanti.Open();
+			dr = donemad.ExecuteReader();
+
+			while (dr.Read())
+			{
+				donemsecCmb.Items.Add(dr["donem_ad"]);
+			}
+
+			baglanti.Close();
+		}
+		public void SinavTuruSec()
+		{
+			MySqlConnection bgl = new MySqlConnection();
+			bgl.ConnectionString = "Server = localhost; Database = TestOtomasyon; user = root; pwd = 'R.cnkb0z'; ";
+			MySqlCommand sinavturad = new MySqlCommand();
+			sinavturad.CommandText = "SELECT sinavtur_ad FROM Sinavturu";
+			sinavturad.Connection = bgl;
+			sinavturad.CommandType = CommandType.Text;
+
+			MySqlDataReader dr1;
+			bgl.Open();
+			dr1 = sinavturad.ExecuteReader();
+
+			while (dr1.Read())
+			{
+				sinavturusecCmb.Items.Add(dr1["sinavtur_ad"]);
+			}
+
+			bgl.Close();
+		}
+		public void DosyaSec()
 		{
 			openFileDialog1.Filter = "Metin Belgesi(*.txt) | *.txt";
 			openFileDialog1.FileName = "";
@@ -112,6 +88,44 @@ namespace YazılımlabABRCB
 				DosyaAdi = Path.GetFileName(openFileDialog1.FileName);
 				//progressBar1.Value = 100;
 			}
+		}
+		public void DataGridAtama()
+		{
+			var lines = File.ReadAllLines(textBox1.Text, Encoding.GetEncoding("iso-8859-9"));
+			if (lines.Count() > 0)
+			{
+				foreach (
+					var columnName in lines.FirstOrDefault()
+					.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries)
+				)
+				{
+					dataGridView1.Columns.Add(columnName, columnName);
+				}
+				foreach (var cellValues in lines.Skip(1))
+				{
+					var cellArray = cellValues
+						.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+					if (cellArray.Length == dataGridView1.Columns.Count)
+						dataGridView1.Rows.Add(cellArray);
+				}
+			}
+		}
+
+		private void OgretimUyesiSoruBazliSonuc_Load(object sender, EventArgs e)
+		{
+			DonemSec();
+			SinavTuruSec();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			//DataGridAtama();
+			DuzenlemeSayfasiAc();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			DosyaSec();
 		}
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
