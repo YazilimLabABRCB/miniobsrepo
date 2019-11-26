@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			this.button1 = new System.Windows.Forms.Button();
 			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.textBox1 = new System.Windows.Forms.TextBox();
@@ -38,6 +39,15 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.progressBar1 = new System.Windows.Forms.ProgressBar();
+			this.listBox2 = new System.Windows.Forms.ListBox();
+			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tümünüSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.silToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.tümünüTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.contextMenuStrip1.SuspendLayout();
+			this.contextMenuStrip2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -53,10 +63,11 @@
 			// listBox1
 			// 
 			this.listBox1.FormattingEnabled = true;
-			this.listBox1.Location = new System.Drawing.Point(12, 132);
+			this.listBox1.Location = new System.Drawing.Point(12, 52);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(327, 121);
+			this.listBox1.Size = new System.Drawing.Size(197, 199);
 			this.listBox1.TabIndex = 2;
+			this.listBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDown);
 			// 
 			// textBox1
 			// 
@@ -78,7 +89,7 @@
 			// 
 			// button3
 			// 
-			this.button3.Location = new System.Drawing.Point(417, 25);
+			this.button3.Location = new System.Drawing.Point(320, 26);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(75, 23);
 			this.button3.TabIndex = 6;
@@ -89,7 +100,7 @@
 			// textBox2
 			// 
 			this.textBox2.Enabled = false;
-			this.textBox2.Location = new System.Drawing.Point(311, 25);
+			this.textBox2.Location = new System.Drawing.Point(214, 28);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(100, 20);
 			this.textBox2.TabIndex = 5;
@@ -106,7 +117,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(308, 9);
+			this.label2.Location = new System.Drawing.Point(212, 9);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(80, 13);
 			this.label2.TabIndex = 8;
@@ -123,11 +134,65 @@
 			this.progressBar1.Size = new System.Drawing.Size(197, 23);
 			this.progressBar1.TabIndex = 9;
 			// 
+			// listBox2
+			// 
+			this.listBox2.FormattingEnabled = true;
+			this.listBox2.Location = new System.Drawing.Point(214, 52);
+			this.listBox2.Name = "listBox2";
+			this.listBox2.Size = new System.Drawing.Size(197, 199);
+			this.listBox2.TabIndex = 10;
+			this.listBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox2_MouseDown);
+			// 
+			// contextMenuStrip1
+			// 
+			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem,
+            this.tümünüSilToolStripMenuItem});
+			this.contextMenuStrip1.Name = "contextMenuStrip1";
+			this.contextMenuStrip1.Size = new System.Drawing.Size(164, 48);
+			// 
+			// silToolStripMenuItem
+			// 
+			this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+			this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.silToolStripMenuItem.Text = "Sil";
+			this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+			// 
+			// tümünüSilToolStripMenuItem
+			// 
+			this.tümünüSilToolStripMenuItem.Name = "tümünüSilToolStripMenuItem";
+			this.tümünüSilToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+			this.tümünüSilToolStripMenuItem.Text = "Tümünü Temzile";
+			this.tümünüSilToolStripMenuItem.Click += new System.EventHandler(this.tümünüSilToolStripMenuItem_Click);
+			// 
+			// contextMenuStrip2
+			// 
+			this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem1,
+            this.tümünüTemizleToolStripMenuItem});
+			this.contextMenuStrip2.Name = "contextMenuStrip2";
+			this.contextMenuStrip2.Size = new System.Drawing.Size(164, 48);
+			// 
+			// silToolStripMenuItem1
+			// 
+			this.silToolStripMenuItem1.Name = "silToolStripMenuItem1";
+			this.silToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+			this.silToolStripMenuItem1.Text = "Sil";
+			this.silToolStripMenuItem1.Click += new System.EventHandler(this.silToolStripMenuItem1_Click);
+			// 
+			// tümünüTemizleToolStripMenuItem
+			// 
+			this.tümünüTemizleToolStripMenuItem.Name = "tümünüTemizleToolStripMenuItem";
+			this.tümünüTemizleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.tümünüTemizleToolStripMenuItem.Text = "Tümünü Temizle";
+			this.tümünüTemizleToolStripMenuItem.Click += new System.EventHandler(this.tümünüTemizleToolStripMenuItem_Click);
+			// 
 			// OgretimUyesiTestOkutma
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(429, 308);
+			this.Controls.Add(this.listBox2);
 			this.Controls.Add(this.progressBar1);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
@@ -141,6 +206,8 @@
 			this.ShowIcon = false;
 			this.Text = "Kullanıcı - Test Okutma";
 			this.Load += new System.EventHandler(this.OgretimUyesiTestOkutma_Load);
+			this.contextMenuStrip1.ResumeLayout(false);
+			this.contextMenuStrip2.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -157,5 +224,12 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.ProgressBar progressBar1;
+		private System.Windows.Forms.ListBox listBox2;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem tümünüSilToolStripMenuItem;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+		private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem tümünüTemizleToolStripMenuItem;
 	}
 }
