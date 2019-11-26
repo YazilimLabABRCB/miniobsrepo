@@ -38,13 +38,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.donemsilme = new System.Windows.Forms.TabPage();
             this.donemsilmebutton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.donemsildonemidtxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.donemgüncelleme = new System.Windows.Forms.TabPage();
             this.donemarabutton = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.donemaradonemidtxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.donemlisteleme = new System.Windows.Forms.TabPage();
+            this.donemguncelledonemidtxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.donemguncellebutton = new System.Windows.Forms.Button();
+            this.donemguncelledonemadtxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.donemekleme.SuspendLayout();
             this.donemsilme.SuspendLayout();
@@ -135,7 +140,7 @@
             // donemsilme
             // 
             this.donemsilme.Controls.Add(this.donemsilmebutton);
-            this.donemsilme.Controls.Add(this.textBox2);
+            this.donemsilme.Controls.Add(this.donemsildonemidtxt);
             this.donemsilme.Controls.Add(this.label2);
             this.donemsilme.Location = new System.Drawing.Point(4, 22);
             this.donemsilme.Name = "donemsilme";
@@ -153,13 +158,14 @@
             this.donemsilmebutton.TabIndex = 17;
             this.donemsilmebutton.Text = "Sil";
             this.donemsilmebutton.UseVisualStyleBackColor = true;
+            this.donemsilmebutton.Click += new System.EventHandler(this.donemsilmebutton_Click);
             // 
-            // textBox2
+            // donemsildonemidtxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(236, 226);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 16;
+            this.donemsildonemidtxt.Location = new System.Drawing.Point(236, 226);
+            this.donemsildonemidtxt.Name = "donemsildonemidtxt";
+            this.donemsildonemidtxt.Size = new System.Drawing.Size(100, 20);
+            this.donemsildonemidtxt.TabIndex = 16;
             // 
             // label2
             // 
@@ -172,8 +178,13 @@
             // 
             // donemgüncelleme
             // 
+            this.donemgüncelleme.Controls.Add(this.donemguncelledonemidtxt);
+            this.donemgüncelleme.Controls.Add(this.label5);
+            this.donemgüncelleme.Controls.Add(this.donemguncellebutton);
+            this.donemgüncelleme.Controls.Add(this.donemguncelledonemadtxt);
+            this.donemgüncelleme.Controls.Add(this.label6);
             this.donemgüncelleme.Controls.Add(this.donemarabutton);
-            this.donemgüncelleme.Controls.Add(this.textBox3);
+            this.donemgüncelleme.Controls.Add(this.donemaradonemidtxt);
             this.donemgüncelleme.Controls.Add(this.label3);
             this.donemgüncelleme.Location = new System.Drawing.Point(4, 22);
             this.donemgüncelleme.Name = "donemgüncelleme";
@@ -184,24 +195,25 @@
             // 
             // donemarabutton
             // 
-            this.donemarabutton.Location = new System.Drawing.Point(246, 279);
+            this.donemarabutton.Location = new System.Drawing.Point(217, 159);
             this.donemarabutton.Name = "donemarabutton";
             this.donemarabutton.Size = new System.Drawing.Size(75, 23);
             this.donemarabutton.TabIndex = 20;
             this.donemarabutton.Text = "Ara";
             this.donemarabutton.UseVisualStyleBackColor = true;
+            this.donemarabutton.Click += new System.EventHandler(this.donemarabutton_Click);
             // 
-            // textBox3
+            // donemaradonemidtxt
             // 
-            this.textBox3.Location = new System.Drawing.Point(236, 226);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 19;
+            this.donemaradonemidtxt.Location = new System.Drawing.Point(207, 106);
+            this.donemaradonemidtxt.Name = "donemaradonemidtxt";
+            this.donemaradonemidtxt.Size = new System.Drawing.Size(100, 20);
+            this.donemaradonemidtxt.TabIndex = 19;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(123, 226);
+            this.label3.Location = new System.Drawing.Point(94, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 18;
@@ -216,6 +228,48 @@
             this.donemlisteleme.Text = "Dönem Listeleme";
             this.donemlisteleme.UseVisualStyleBackColor = true;
             // 
+            // donemguncelledonemidtxt
+            // 
+            this.donemguncelledonemidtxt.Location = new System.Drawing.Point(207, 230);
+            this.donemguncelledonemidtxt.Name = "donemguncelledonemidtxt";
+            this.donemguncelledonemidtxt.Size = new System.Drawing.Size(100, 20);
+            this.donemguncelledonemidtxt.TabIndex = 25;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(94, 230);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Donem id";
+            // 
+            // donemguncellebutton
+            // 
+            this.donemguncellebutton.Location = new System.Drawing.Point(217, 320);
+            this.donemguncellebutton.Name = "donemguncellebutton";
+            this.donemguncellebutton.Size = new System.Drawing.Size(75, 23);
+            this.donemguncellebutton.TabIndex = 23;
+            this.donemguncellebutton.Text = "Güncelle";
+            this.donemguncellebutton.UseVisualStyleBackColor = true;
+            this.donemguncellebutton.Click += new System.EventHandler(this.donemguncellebutton_Click);
+            // 
+            // donemguncelledonemadtxt
+            // 
+            this.donemguncelledonemadtxt.Location = new System.Drawing.Point(207, 267);
+            this.donemguncelledonemadtxt.Name = "donemguncelledonemadtxt";
+            this.donemguncelledonemadtxt.Size = new System.Drawing.Size(100, 20);
+            this.donemguncelledonemadtxt.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(94, 267);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Donem ad";
+            // 
             // AdminDonem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,6 +278,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "AdminDonem";
             this.Text = "AdminDonem";
+            this.Load += new System.EventHandler(this.AdminDonem_Load);
             this.tabControl1.ResumeLayout(false);
             this.donemekleme.ResumeLayout(false);
             this.donemekleme.PerformLayout();
@@ -246,12 +301,17 @@
         private System.Windows.Forms.TextBox donemekledonemadtxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button donemsilmebutton;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox donemsildonemidtxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button donemarabutton;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox donemaradonemidtxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox donemekledonemidtxt;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox donemguncelledonemidtxt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button donemguncellebutton;
+        private System.Windows.Forms.TextBox donemguncelledonemadtxt;
+        private System.Windows.Forms.Label label6;
     }
 }
