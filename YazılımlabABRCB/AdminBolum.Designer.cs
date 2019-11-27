@@ -44,19 +44,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.bolumgeributton1 = new System.Windows.Forms.Button();
             this.bolumguncelleme = new System.Windows.Forms.TabPage();
+            this.bolumguncellebutton = new System.Windows.Forms.Button();
+            this.bolumguncellebolumaditxt = new System.Windows.Forms.TextBox();
+            this.bolumguncellefakultenotxt = new System.Windows.Forms.TextBox();
+            this.bolumguncellebolumnotxt = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.bolumarabutton = new System.Windows.Forms.Button();
             this.bolumarabolumnotxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.bolumgeributton2 = new System.Windows.Forms.Button();
             this.bolumlisteleme = new System.Windows.Forms.TabPage();
             this.bolumgeributton3 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.bolumguncellebolumnotxt = new System.Windows.Forms.TextBox();
-            this.bolumguncellefakultenotxt = new System.Windows.Forms.TextBox();
-            this.bolumguncellebolumaditxt = new System.Windows.Forms.TextBox();
-            this.bolumguncellebutton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.bolumeklekazanimeklebutton = new System.Windows.Forms.Button();
+            this.bolumeklekazanimrtxt = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.bolumekle.SuspendLayout();
             this.bolumsilme.SuspendLayout();
@@ -89,6 +92,9 @@
             // 
             // bolumekle
             // 
+            this.bolumekle.Controls.Add(this.bolumeklekazanimrtxt);
+            this.bolumekle.Controls.Add(this.bolumeklekazanimeklebutton);
+            this.bolumekle.Controls.Add(this.label6);
             this.bolumekle.Controls.Add(this.bolumeklebutton);
             this.bolumekle.Controls.Add(this.bolumeklebolumadtxt);
             this.bolumekle.Controls.Add(this.bolumeklebolumnotxt);
@@ -107,7 +113,7 @@
             // 
             // bolumeklebutton
             // 
-            this.bolumeklebutton.Location = new System.Drawing.Point(184, 259);
+            this.bolumeklebutton.Location = new System.Drawing.Point(197, 220);
             this.bolumeklebutton.Name = "bolumeklebutton";
             this.bolumeklebutton.Size = new System.Drawing.Size(75, 23);
             this.bolumeklebutton.TabIndex = 11;
@@ -117,21 +123,21 @@
             // 
             // bolumeklebolumadtxt
             // 
-            this.bolumeklebolumadtxt.Location = new System.Drawing.Point(184, 199);
+            this.bolumeklebolumadtxt.Location = new System.Drawing.Point(184, 170);
             this.bolumeklebolumadtxt.Name = "bolumeklebolumadtxt";
             this.bolumeklebolumadtxt.Size = new System.Drawing.Size(100, 20);
             this.bolumeklebolumadtxt.TabIndex = 10;
             // 
             // bolumeklebolumnotxt
             // 
-            this.bolumeklebolumnotxt.Location = new System.Drawing.Point(184, 154);
+            this.bolumeklebolumnotxt.Location = new System.Drawing.Point(184, 125);
             this.bolumeklebolumnotxt.Name = "bolumeklebolumnotxt";
             this.bolumeklebolumnotxt.Size = new System.Drawing.Size(100, 20);
             this.bolumeklebolumnotxt.TabIndex = 9;
             // 
             // bolumeklefakultenotxt
             // 
-            this.bolumeklefakultenotxt.Location = new System.Drawing.Point(184, 107);
+            this.bolumeklefakultenotxt.Location = new System.Drawing.Point(184, 78);
             this.bolumeklefakultenotxt.Name = "bolumeklefakultenotxt";
             this.bolumeklefakultenotxt.Size = new System.Drawing.Size(100, 20);
             this.bolumeklefakultenotxt.TabIndex = 8;
@@ -139,7 +145,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(78, 199);
+            this.label3.Location = new System.Drawing.Point(78, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 7;
@@ -148,7 +154,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 154);
+            this.label2.Location = new System.Drawing.Point(78, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 6;
@@ -157,7 +163,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(78, 107);
+            this.label1.Location = new System.Drawing.Point(78, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 5;
@@ -233,6 +239,64 @@
             this.bolumguncelleme.Text = "Bölüm Güncelleme";
             this.bolumguncelleme.UseVisualStyleBackColor = true;
             // 
+            // bolumguncellebutton
+            // 
+            this.bolumguncellebutton.Location = new System.Drawing.Point(190, 310);
+            this.bolumguncellebutton.Name = "bolumguncellebutton";
+            this.bolumguncellebutton.Size = new System.Drawing.Size(75, 23);
+            this.bolumguncellebutton.TabIndex = 16;
+            this.bolumguncellebutton.Text = "Güncelle";
+            this.bolumguncellebutton.UseVisualStyleBackColor = true;
+            this.bolumguncellebutton.Click += new System.EventHandler(this.bolumguncellebutton_Click);
+            // 
+            // bolumguncellebolumaditxt
+            // 
+            this.bolumguncellebolumaditxt.Location = new System.Drawing.Point(181, 272);
+            this.bolumguncellebolumaditxt.Name = "bolumguncellebolumaditxt";
+            this.bolumguncellebolumaditxt.Size = new System.Drawing.Size(100, 20);
+            this.bolumguncellebolumaditxt.TabIndex = 15;
+            // 
+            // bolumguncellefakultenotxt
+            // 
+            this.bolumguncellefakultenotxt.Location = new System.Drawing.Point(181, 238);
+            this.bolumguncellefakultenotxt.Name = "bolumguncellefakultenotxt";
+            this.bolumguncellefakultenotxt.Size = new System.Drawing.Size(100, 20);
+            this.bolumguncellefakultenotxt.TabIndex = 14;
+            // 
+            // bolumguncellebolumnotxt
+            // 
+            this.bolumguncellebolumnotxt.Location = new System.Drawing.Point(181, 201);
+            this.bolumguncellebolumnotxt.Name = "bolumguncellebolumnotxt";
+            this.bolumguncellebolumnotxt.Size = new System.Drawing.Size(100, 20);
+            this.bolumguncellebolumnotxt.TabIndex = 13;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(79, 272);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Bölüm adı";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(79, 238);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Fakülte no";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(79, 201);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Bölüm no";
+            // 
             // bolumarabutton
             // 
             this.bolumarabutton.Location = new System.Drawing.Point(214, 124);
@@ -289,63 +353,32 @@
             this.bolumgeributton3.UseVisualStyleBackColor = true;
             this.bolumgeributton3.Click += new System.EventHandler(this.bolumgeributton3_Click);
             // 
-            // label7
+            // label6
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(79, 201);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Bölüm no";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 294);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Kazanım Adı";
             // 
-            // label8
+            // bolumeklekazanimeklebutton
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(79, 238);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 13);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Fakülte no";
+            this.bolumeklekazanimeklebutton.Location = new System.Drawing.Point(163, 409);
+            this.bolumeklekazanimeklebutton.Name = "bolumeklekazanimeklebutton";
+            this.bolumeklekazanimeklebutton.Size = new System.Drawing.Size(100, 23);
+            this.bolumeklekazanimeklebutton.TabIndex = 14;
+            this.bolumeklekazanimeklebutton.Text = "Kazanım Ekle";
+            this.bolumeklekazanimeklebutton.UseVisualStyleBackColor = true;
+            this.bolumeklekazanimeklebutton.Click += new System.EventHandler(this.bolumeklekazanimbutton_Click);
             // 
-            // label9
+            // bolumeklekazanimrtxt
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(79, 272);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Bölüm adı";
-            // 
-            // bolumguncellebolumnotxt
-            // 
-            this.bolumguncellebolumnotxt.Location = new System.Drawing.Point(181, 201);
-            this.bolumguncellebolumnotxt.Name = "bolumguncellebolumnotxt";
-            this.bolumguncellebolumnotxt.Size = new System.Drawing.Size(100, 20);
-            this.bolumguncellebolumnotxt.TabIndex = 13;
-            // 
-            // bolumguncellefakultenotxt
-            // 
-            this.bolumguncellefakultenotxt.Location = new System.Drawing.Point(181, 238);
-            this.bolumguncellefakultenotxt.Name = "bolumguncellefakultenotxt";
-            this.bolumguncellefakultenotxt.Size = new System.Drawing.Size(100, 20);
-            this.bolumguncellefakultenotxt.TabIndex = 14;
-            // 
-            // bolumguncellebolumaditxt
-            // 
-            this.bolumguncellebolumaditxt.Location = new System.Drawing.Point(181, 272);
-            this.bolumguncellebolumaditxt.Name = "bolumguncellebolumaditxt";
-            this.bolumguncellebolumaditxt.Size = new System.Drawing.Size(100, 20);
-            this.bolumguncellebolumaditxt.TabIndex = 15;
-            // 
-            // bolumguncellebutton
-            // 
-            this.bolumguncellebutton.Location = new System.Drawing.Point(190, 310);
-            this.bolumguncellebutton.Name = "bolumguncellebutton";
-            this.bolumguncellebutton.Size = new System.Drawing.Size(75, 23);
-            this.bolumguncellebutton.TabIndex = 16;
-            this.bolumguncellebutton.Text = "Güncelle";
-            this.bolumguncellebutton.UseVisualStyleBackColor = true;
-            this.bolumguncellebutton.Click += new System.EventHandler(this.bolumguncellebutton_Click);
+            this.bolumeklekazanimrtxt.Location = new System.Drawing.Point(120, 291);
+            this.bolumeklekazanimrtxt.Name = "bolumeklekazanimrtxt";
+            this.bolumeklekazanimrtxt.Size = new System.Drawing.Size(191, 96);
+            this.bolumeklekazanimrtxt.TabIndex = 15;
+            this.bolumeklekazanimrtxt.Text = "";
             // 
             // AdminBolum
             // 
@@ -398,5 +431,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button bolumguncellebutton;
+        private System.Windows.Forms.RichTextBox bolumeklekazanimrtxt;
+        private System.Windows.Forms.Button bolumeklekazanimeklebutton;
+        private System.Windows.Forms.Label label6;
     }
 }

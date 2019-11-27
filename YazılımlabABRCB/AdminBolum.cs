@@ -78,7 +78,7 @@ namespace YazılımlabABRCB
                     else
                         MessageBox.Show("Bölüm Eklenirken bir hata oluştu");
                     Globals.con.Close();
-                    this.Hide();
+                    
 
                 }
             }
@@ -114,8 +114,6 @@ namespace YazılımlabABRCB
             else if (bolumsilbolumnotxt.Text == "") MessageBox.Show("Bölüm Numarası Girilmeden Silme İşlemi Gerçekleştirilemez");
 
         }
-
-        
 
         private void bolumarabutton_Click(object sender, EventArgs e)
         {
@@ -175,6 +173,33 @@ namespace YazılımlabABRCB
                 }
             }
 
+        }
+
+
+        private void bolumeklekazanimbutton_Click(object sender, EventArgs e)
+        {
+            if (bolumeklekazanimrtxt.Text != "" )
+            {
+                 object sonuc = null;
+   
+                    Globals.con.Open();
+                    MySqlCommand kazanimekle = new MySqlCommand("insert into `KazanimBolum` (`kazanimbolum_adi`, `bolum_no`) values('" + bolumeklekazanimrtxt.Text + "','" + bolumeklebolumnotxt.Text + "')", Globals.con);
+
+                    sonuc = kazanimekle.ExecuteNonQuery();
+                if (sonuc != null)
+                {
+                    MessageBox.Show("Kazanim Başarıyla Eklendi");
+                    bolumeklekazanimrtxt.Text = "";
+                }
+                else
+                    MessageBox.Show("Kazanim Eklenirken bir hata oluştu");
+                    Globals.con.Close();
+                    
+
+                
+            }
+            else if (bolumeklekazanimrtxt.Text == "") MessageBox.Show("Kazanim Alanı Boş Bırakılamaz");
+           
         }
     }
 }

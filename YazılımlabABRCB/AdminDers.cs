@@ -37,6 +37,7 @@ namespace YazılımlabABRCB
             dersguncelledersadtxt.Visible = false;
             dersguncellebutton.Visible = false;
         }
+
         private void derseklebutton_Click(object sender, EventArgs e)
         {
             if (derseklefakultenotxt.Text != "" && derseklebolumnotxt.Text != "" && derseklederskodutxt.Text != "" && dersekledersadıtxt.Text != "")
@@ -93,8 +94,6 @@ namespace YazılımlabABRCB
             else if (derssilderskodutxt.Text == "") MessageBox.Show("Ders Kodu Girilmeden Silme İşlemi Gerçekleştirilemez");
 
         }
-
-        
 
         private void dersarabutton_Click(object sender, EventArgs e)
         {
@@ -157,6 +156,33 @@ namespace YazılımlabABRCB
                 }
             }
         }
-    }
-    }
 
+        private void derseklekazanimeklebutton_Click(object sender, EventArgs e)
+        {
+            if (derseklekazanimrtxt.Text != "")
+            {
+                object sonuc = null;
+
+                Globals.con.Open();
+                MySqlCommand kazanimekle = new MySqlCommand("insert into `KazanimDers` (`kazanimders_adi`, `ders_kodu`) values('" + derseklekazanimrtxt.Text + "','" + derseklederskodutxt.Text + "')", Globals.con);
+
+                sonuc = kazanimekle.ExecuteNonQuery();
+                if (sonuc != null)
+                {
+                    MessageBox.Show("Kazanim Başarıyla Eklendi");
+                    derseklekazanimrtxt.Text = "";
+                }
+                else
+                    MessageBox.Show("Kazanim Eklenirken bir hata oluştu");
+                Globals.con.Close();
+
+
+
+            }
+            else if (derseklekazanimrtxt.Text == "") MessageBox.Show("Kazanim Alanı Boş Bırakılamaz");
+
+        }
+    }
+}
+
+           
