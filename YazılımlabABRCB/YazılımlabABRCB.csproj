@@ -111,7 +111,19 @@
     <Compile Include="AdminSınavSonuc.Designer.cs">
       <DependentUpon>AdminSınavSonuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="CevapAnahtariDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CevapAnahtariDuzenle.Designer.cs">
+      <DependentUpon>CevapAnahtariDuzenle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Globals.cs" />
+    <Compile Include="OgrenciCevapDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciCevapDuzenle.Designer.cs">
+      <DependentUpon>OgrenciCevapDuzenle.cs</DependentUpon>
+    </Compile>
     <Compile Include="OgretimUyesiHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +182,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminSınavSonuc.resx">
       <DependentUpon>AdminSınavSonuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CevapAnahtariDuzenle.resx">
+      <DependentUpon>CevapAnahtariDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciCevapDuzenle.resx">
+      <DependentUpon>OgrenciCevapDuzenle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OgretimUyesiHomePage.resx">
       <DependentUpon>OgretimUyesiHomePage.cs</DependentUpon>

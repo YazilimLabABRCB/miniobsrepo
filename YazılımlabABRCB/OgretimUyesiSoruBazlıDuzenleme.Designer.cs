@@ -92,7 +92,6 @@
 			this.kaydetToolStripButton.Name = "kaydetToolStripButton";
 			this.kaydetToolStripButton.Size = new System.Drawing.Size(23, 22);
 			this.kaydetToolStripButton.Text = "&Kaydet";
-			this.kaydetToolStripButton.Click += new System.EventHandler(this.kaydetToolStripButton_Click);
 			// 
 			// toolStripSeparator
 			// 
