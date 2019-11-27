@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dersatamageributton = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.atamalisteletab = new System.Windows.Forms.TabControl();
             this.dersatama = new System.Windows.Forms.TabPage();
             this.dersatamabutton = new System.Windows.Forms.Button();
             this.dersatamaderskodutxt = new System.Windows.Forms.TextBox();
@@ -51,10 +51,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dersatamagüncelleme = new System.Windows.Forms.TabPage();
-            this.dersatamaarabutton = new System.Windows.Forms.Button();
-            this.dersatamaarasicilnotxt = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dersatamalisteleme = new System.Windows.Forms.TabPage();
             this.dersatamaguncellebutton = new System.Windows.Forms.Button();
             this.dersatamaguncellederskodutxt = new System.Windows.Forms.TextBox();
             this.dersatamaguncelledonemidtxt = new System.Windows.Forms.TextBox();
@@ -64,10 +60,26 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.dersatamaarabutton = new System.Windows.Forms.Button();
+            this.dersatamaarasicilnotxt = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dersatamalisteleme = new System.Windows.Forms.TabPage();
+            this.atamalistedgw = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.atamalisteletab.SuspendLayout();
             this.dersatama.SuspendLayout();
             this.dersatamasilme.SuspendLayout();
             this.dersatamagüncelleme.SuspendLayout();
+            this.dersatamalisteleme.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.atamalistedgw)).BeginInit();
             this.SuspendLayout();
             // 
             // dersatamageributton
@@ -80,18 +92,19 @@
             this.dersatamageributton.UseVisualStyleBackColor = true;
             this.dersatamageributton.Click += new System.EventHandler(this.dersatamageributton_Click);
             // 
-            // tabControl1
+            // atamalisteletab
             // 
-            this.tabControl1.Controls.Add(this.dersatama);
-            this.tabControl1.Controls.Add(this.dersatamasilme);
-            this.tabControl1.Controls.Add(this.dersatamagüncelleme);
-            this.tabControl1.Controls.Add(this.dersatamalisteleme);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(473, 546);
-            this.tabControl1.TabIndex = 10;
+            this.atamalisteletab.Controls.Add(this.dersatama);
+            this.atamalisteletab.Controls.Add(this.dersatamasilme);
+            this.atamalisteletab.Controls.Add(this.dersatamagüncelleme);
+            this.atamalisteletab.Controls.Add(this.dersatamalisteleme);
+            this.atamalisteletab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.atamalisteletab.Location = new System.Drawing.Point(0, 0);
+            this.atamalisteletab.Name = "atamalisteletab";
+            this.atamalisteletab.SelectedIndex = 0;
+            this.atamalisteletab.Size = new System.Drawing.Size(1119, 641);
+            this.atamalisteletab.TabIndex = 10;
+            this.atamalisteletab.Click += new System.EventHandler(this.atamalisteletab_Click);
             // 
             // dersatama
             // 
@@ -108,7 +121,7 @@
             this.dersatama.Location = new System.Drawing.Point(4, 22);
             this.dersatama.Name = "dersatama";
             this.dersatama.Padding = new System.Windows.Forms.Padding(3);
-            this.dersatama.Size = new System.Drawing.Size(465, 520);
+            this.dersatama.Size = new System.Drawing.Size(946, 531);
             this.dersatama.TabIndex = 0;
             this.dersatama.Text = "Ders Atama";
             this.dersatama.UseVisualStyleBackColor = true;
@@ -201,7 +214,7 @@
             this.dersatamasilme.Location = new System.Drawing.Point(4, 22);
             this.dersatamasilme.Name = "dersatamasilme";
             this.dersatamasilme.Padding = new System.Windows.Forms.Padding(3);
-            this.dersatamasilme.Size = new System.Drawing.Size(465, 520);
+            this.dersatamasilme.Size = new System.Drawing.Size(946, 531);
             this.dersatamasilme.TabIndex = 1;
             this.dersatamasilme.Text = "Ders Atama Silme";
             this.dersatamasilme.UseVisualStyleBackColor = true;
@@ -296,45 +309,10 @@
             this.dersatamagüncelleme.Controls.Add(this.label9);
             this.dersatamagüncelleme.Location = new System.Drawing.Point(4, 22);
             this.dersatamagüncelleme.Name = "dersatamagüncelleme";
-            this.dersatamagüncelleme.Size = new System.Drawing.Size(465, 520);
+            this.dersatamagüncelleme.Size = new System.Drawing.Size(946, 531);
             this.dersatamagüncelleme.TabIndex = 2;
             this.dersatamagüncelleme.Text = "Ders Atama Güncelleme";
             this.dersatamagüncelleme.UseVisualStyleBackColor = true;
-            // 
-            // dersatamaarabutton
-            // 
-            this.dersatamaarabutton.Location = new System.Drawing.Point(212, 119);
-            this.dersatamaarabutton.Name = "dersatamaarabutton";
-            this.dersatamaarabutton.Size = new System.Drawing.Size(75, 23);
-            this.dersatamaarabutton.TabIndex = 19;
-            this.dersatamaarabutton.Text = "Ara";
-            this.dersatamaarabutton.UseVisualStyleBackColor = true;
-            this.dersatamaarabutton.Click += new System.EventHandler(this.dersatamaarabutton_Click);
-            // 
-            // dersatamaarasicilnotxt
-            // 
-            this.dersatamaarasicilnotxt.Location = new System.Drawing.Point(203, 71);
-            this.dersatamaarasicilnotxt.Name = "dersatamaarasicilnotxt";
-            this.dersatamaarasicilnotxt.Size = new System.Drawing.Size(100, 20);
-            this.dersatamaarasicilnotxt.TabIndex = 16;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(96, 71);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Sicil no";
-            // 
-            // dersatamalisteleme
-            // 
-            this.dersatamalisteleme.Location = new System.Drawing.Point(4, 22);
-            this.dersatamalisteleme.Name = "dersatamalisteleme";
-            this.dersatamalisteleme.Size = new System.Drawing.Size(465, 520);
-            this.dersatamalisteleme.TabIndex = 3;
-            this.dersatamalisteleme.Text = "Ders Atama Listeleme";
-            this.dersatamalisteleme.UseVisualStyleBackColor = true;
             // 
             // dersatamaguncellebutton
             // 
@@ -410,29 +388,149 @@
             this.label13.TabIndex = 20;
             this.label13.Text = "Sicil no";
             // 
+            // dersatamaarabutton
+            // 
+            this.dersatamaarabutton.Location = new System.Drawing.Point(212, 119);
+            this.dersatamaarabutton.Name = "dersatamaarabutton";
+            this.dersatamaarabutton.Size = new System.Drawing.Size(75, 23);
+            this.dersatamaarabutton.TabIndex = 19;
+            this.dersatamaarabutton.Text = "Ara";
+            this.dersatamaarabutton.UseVisualStyleBackColor = true;
+            this.dersatamaarabutton.Click += new System.EventHandler(this.dersatamaarabutton_Click);
+            // 
+            // dersatamaarasicilnotxt
+            // 
+            this.dersatamaarasicilnotxt.Location = new System.Drawing.Point(203, 71);
+            this.dersatamaarasicilnotxt.Name = "dersatamaarasicilnotxt";
+            this.dersatamaarasicilnotxt.Size = new System.Drawing.Size(100, 20);
+            this.dersatamaarasicilnotxt.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(96, 71);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Sicil no";
+            // 
+            // dersatamalisteleme
+            // 
+            this.dersatamalisteleme.Controls.Add(this.atamalistedgw);
+            this.dersatamalisteleme.Location = new System.Drawing.Point(4, 22);
+            this.dersatamalisteleme.Name = "dersatamalisteleme";
+            this.dersatamalisteleme.Size = new System.Drawing.Size(1111, 615);
+            this.dersatamalisteleme.TabIndex = 3;
+            this.dersatamalisteleme.Text = "Ders Atama Listeleme";
+            this.dersatamalisteleme.UseVisualStyleBackColor = true;
+            // 
+            // atamalistedgw
+            // 
+            this.atamalistedgw.AllowUserToAddRows = false;
+            this.atamalistedgw.AllowUserToDeleteRows = false;
+            this.atamalistedgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.atamalistedgw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9});
+            this.atamalistedgw.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.atamalistedgw.Location = new System.Drawing.Point(0, 0);
+            this.atamalistedgw.Name = "atamalistedgw";
+            this.atamalistedgw.ReadOnly = true;
+            this.atamalistedgw.Size = new System.Drawing.Size(1111, 615);
+            this.atamalistedgw.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Sicil No";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Adı";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Soyadı";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Bölüm No";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column5.HeaderText = "Bölüm Adı";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 79;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Dönem ID";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column7.HeaderText = "Dönem Adı";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 84;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Ders Kodu";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column9.HeaderText = "Ders Adı";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 72;
+            // 
             // AdminDersAtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 546);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1119, 641);
+            this.Controls.Add(this.atamalisteletab);
             this.Name = "AdminDersAtama";
             this.Text = "AdminDersAtama";
             this.Load += new System.EventHandler(this.AdminDersAtama_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.atamalisteletab.ResumeLayout(false);
             this.dersatama.ResumeLayout(false);
             this.dersatama.PerformLayout();
             this.dersatamasilme.ResumeLayout(false);
             this.dersatamasilme.PerformLayout();
             this.dersatamagüncelleme.ResumeLayout(false);
             this.dersatamagüncelleme.PerformLayout();
+            this.dersatamalisteleme.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.atamalistedgw)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button dersatamageributton;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl atamalisteletab;
         private System.Windows.Forms.TabPage dersatama;
         private System.Windows.Forms.TabPage dersatamasilme;
         private System.Windows.Forms.TabPage dersatamagüncelleme;
@@ -467,5 +565,15 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView atamalistedgw;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

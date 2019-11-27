@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.bolumgeributton = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.ogretimuyesilisteletab = new System.Windows.Forms.TabControl();
             this.ogretimuyesiekleme = new System.Windows.Forms.TabPage();
             this.kullanicieklemebutton = new System.Windows.Forms.Button();
             this.ogretimuyesieklesifretxt = new System.Windows.Forms.TextBox();
@@ -45,10 +45,6 @@
             this.ogretimuyesisilmebutton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.ogretimuyesigüncelleme = new System.Windows.Forms.TabPage();
-            this.ogretimuyesiarasicilnotxt = new System.Windows.Forms.TextBox();
-            this.kullanıcıarabutton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.ogretimuyesilisteleme = new System.Windows.Forms.TabPage();
             this.ogretimuyesiguncellebutton = new System.Windows.Forms.Button();
             this.ogretimuyesiguncellesifretxt = new System.Windows.Forms.TextBox();
             this.ogretimuyesiguncellesoyadtxt = new System.Windows.Forms.TextBox();
@@ -58,15 +54,26 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.ogretimuyesiarasicilnotxt = new System.Windows.Forms.TextBox();
+            this.kullanıcıarabutton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ogretimuyesilisteleme = new System.Windows.Forms.TabPage();
+            this.ogretimuyesilisteledgw = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ogretimuyesilisteletab.SuspendLayout();
             this.ogretimuyesiekleme.SuspendLayout();
             this.ogretimuyesisilme.SuspendLayout();
             this.ogretimuyesigüncelleme.SuspendLayout();
+            this.ogretimuyesilisteleme.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ogretimuyesilisteledgw)).BeginInit();
             this.SuspendLayout();
             // 
             // bolumgeributton
             // 
-            this.bolumgeributton.Location = new System.Drawing.Point(406, 480);
+            this.bolumgeributton.Location = new System.Drawing.Point(554, 488);
             this.bolumgeributton.Name = "bolumgeributton";
             this.bolumgeributton.Size = new System.Drawing.Size(72, 52);
             this.bolumgeributton.TabIndex = 8;
@@ -74,18 +81,19 @@
             this.bolumgeributton.UseVisualStyleBackColor = true;
             this.bolumgeributton.Click += new System.EventHandler(this.bolumgeributton_Click);
             // 
-            // tabControl1
+            // ogretimuyesilisteletab
             // 
-            this.tabControl1.Controls.Add(this.ogretimuyesiekleme);
-            this.tabControl1.Controls.Add(this.ogretimuyesisilme);
-            this.tabControl1.Controls.Add(this.ogretimuyesigüncelleme);
-            this.tabControl1.Controls.Add(this.ogretimuyesilisteleme);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(486, 558);
-            this.tabControl1.TabIndex = 9;
+            this.ogretimuyesilisteletab.Controls.Add(this.ogretimuyesiekleme);
+            this.ogretimuyesilisteletab.Controls.Add(this.ogretimuyesisilme);
+            this.ogretimuyesilisteletab.Controls.Add(this.ogretimuyesigüncelleme);
+            this.ogretimuyesilisteletab.Controls.Add(this.ogretimuyesilisteleme);
+            this.ogretimuyesilisteletab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ogretimuyesilisteletab.Location = new System.Drawing.Point(0, 0);
+            this.ogretimuyesilisteletab.Name = "ogretimuyesilisteletab";
+            this.ogretimuyesilisteletab.SelectedIndex = 0;
+            this.ogretimuyesilisteletab.Size = new System.Drawing.Size(634, 566);
+            this.ogretimuyesilisteletab.TabIndex = 9;
+            this.ogretimuyesilisteletab.Click += new System.EventHandler(this.ogretimuyesilisteletab_Click);
             // 
             // ogretimuyesiekleme
             // 
@@ -102,7 +110,7 @@
             this.ogretimuyesiekleme.Location = new System.Drawing.Point(4, 22);
             this.ogretimuyesiekleme.Name = "ogretimuyesiekleme";
             this.ogretimuyesiekleme.Padding = new System.Windows.Forms.Padding(3);
-            this.ogretimuyesiekleme.Size = new System.Drawing.Size(478, 532);
+            this.ogretimuyesiekleme.Size = new System.Drawing.Size(626, 540);
             this.ogretimuyesiekleme.TabIndex = 0;
             this.ogretimuyesiekleme.Text = "Öğretim Üyesi Ekle";
             this.ogretimuyesiekleme.UseVisualStyleBackColor = true;
@@ -241,41 +249,6 @@
             this.ogretimuyesigüncelleme.Text = "Öğretim Üyesi  Güncelleme";
             this.ogretimuyesigüncelleme.UseVisualStyleBackColor = true;
             // 
-            // ogretimuyesiarasicilnotxt
-            // 
-            this.ogretimuyesiarasicilnotxt.Location = new System.Drawing.Point(209, 62);
-            this.ogretimuyesiarasicilnotxt.Name = "ogretimuyesiarasicilnotxt";
-            this.ogretimuyesiarasicilnotxt.Size = new System.Drawing.Size(100, 20);
-            this.ogretimuyesiarasicilnotxt.TabIndex = 5;
-            // 
-            // kullanıcıarabutton
-            // 
-            this.kullanıcıarabutton.Location = new System.Drawing.Point(218, 118);
-            this.kullanıcıarabutton.Name = "kullanıcıarabutton";
-            this.kullanıcıarabutton.Size = new System.Drawing.Size(75, 23);
-            this.kullanıcıarabutton.TabIndex = 4;
-            this.kullanıcıarabutton.Text = "Ara";
-            this.kullanıcıarabutton.UseVisualStyleBackColor = true;
-            this.kullanıcıarabutton.Click += new System.EventHandler(this.kullanıcıarabutton_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(90, 62);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Sicil no";
-            // 
-            // ogretimuyesilisteleme
-            // 
-            this.ogretimuyesilisteleme.Location = new System.Drawing.Point(4, 22);
-            this.ogretimuyesilisteleme.Name = "ogretimuyesilisteleme";
-            this.ogretimuyesilisteleme.Size = new System.Drawing.Size(478, 532);
-            this.ogretimuyesilisteleme.TabIndex = 3;
-            this.ogretimuyesilisteleme.Text = "Öğretim Üyesi  Listeleme";
-            this.ogretimuyesilisteleme.UseVisualStyleBackColor = true;
-            // 
             // ogretimuyesiguncellebutton
             // 
             this.ogretimuyesiguncellebutton.Location = new System.Drawing.Point(223, 368);
@@ -350,29 +323,101 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "Sicil no";
             // 
+            // ogretimuyesiarasicilnotxt
+            // 
+            this.ogretimuyesiarasicilnotxt.Location = new System.Drawing.Point(209, 62);
+            this.ogretimuyesiarasicilnotxt.Name = "ogretimuyesiarasicilnotxt";
+            this.ogretimuyesiarasicilnotxt.Size = new System.Drawing.Size(100, 20);
+            this.ogretimuyesiarasicilnotxt.TabIndex = 5;
+            // 
+            // kullanıcıarabutton
+            // 
+            this.kullanıcıarabutton.Location = new System.Drawing.Point(218, 118);
+            this.kullanıcıarabutton.Name = "kullanıcıarabutton";
+            this.kullanıcıarabutton.Size = new System.Drawing.Size(75, 23);
+            this.kullanıcıarabutton.TabIndex = 4;
+            this.kullanıcıarabutton.Text = "Ara";
+            this.kullanıcıarabutton.UseVisualStyleBackColor = true;
+            this.kullanıcıarabutton.Click += new System.EventHandler(this.kullanıcıarabutton_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(90, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Sicil no";
+            // 
+            // ogretimuyesilisteleme
+            // 
+            this.ogretimuyesilisteleme.Controls.Add(this.ogretimuyesilisteledgw);
+            this.ogretimuyesilisteleme.Location = new System.Drawing.Point(4, 22);
+            this.ogretimuyesilisteleme.Name = "ogretimuyesilisteleme";
+            this.ogretimuyesilisteleme.Size = new System.Drawing.Size(626, 540);
+            this.ogretimuyesilisteleme.TabIndex = 3;
+            this.ogretimuyesilisteleme.Text = "Öğretim Üyesi  Listeleme";
+            this.ogretimuyesilisteleme.UseVisualStyleBackColor = true;
+            // 
+            // ogretimuyesilisteledgw
+            // 
+            this.ogretimuyesilisteledgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ogretimuyesilisteledgw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.ogretimuyesilisteledgw.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ogretimuyesilisteledgw.Location = new System.Drawing.Point(0, 0);
+            this.ogretimuyesilisteledgw.Name = "ogretimuyesilisteledgw";
+            this.ogretimuyesilisteledgw.Size = new System.Drawing.Size(626, 540);
+            this.ogretimuyesilisteledgw.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Sicil No";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Adı";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Soyadı";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Şifresi";
+            this.Column4.Name = "Column4";
+            // 
             // AdminOgretimUyesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 558);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(634, 566);
+            this.Controls.Add(this.ogretimuyesilisteletab);
             this.Name = "AdminOgretimUyesi";
             this.Text = "AdminKullanıcı";
             this.Load += new System.EventHandler(this.AdminOgretimUyesi_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.ogretimuyesilisteletab.ResumeLayout(false);
             this.ogretimuyesiekleme.ResumeLayout(false);
             this.ogretimuyesiekleme.PerformLayout();
             this.ogretimuyesisilme.ResumeLayout(false);
             this.ogretimuyesisilme.PerformLayout();
             this.ogretimuyesigüncelleme.ResumeLayout(false);
             this.ogretimuyesigüncelleme.PerformLayout();
+            this.ogretimuyesilisteleme.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ogretimuyesilisteledgw)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button bolumgeributton;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl ogretimuyesilisteletab;
         private System.Windows.Forms.TabPage ogretimuyesiekleme;
         private System.Windows.Forms.Button kullanicieklemebutton;
         private System.Windows.Forms.TextBox ogretimuyesieklesifretxt;
@@ -401,5 +446,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView ogretimuyesilisteledgw;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

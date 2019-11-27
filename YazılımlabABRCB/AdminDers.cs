@@ -182,6 +182,23 @@ namespace YazılımlabABRCB
             else if (derseklekazanimrtxt.Text == "") MessageBox.Show("Kazanim Alanı Boş Bırakılamaz");
 
         }
+
+        private void derslisteletab_Click(object sender, EventArgs e)
+        {
+            Globals.con.Open();
+            MySqlCommand listele = new MySqlCommand("select * from `dersliste` ", Globals.con);
+
+            var rd = listele.ExecuteReader();
+            while (rd.Read())
+            {
+                
+                derslisteledgw.Rows.Add(rd.GetString(0), rd.GetString(4), rd.GetString(1), rd.GetString(5),rd.GetString(2), rd.GetString(3));
+
+            }
+
+            Globals.con.Close();
+            rd.Close();
+        }
     }
 }
 

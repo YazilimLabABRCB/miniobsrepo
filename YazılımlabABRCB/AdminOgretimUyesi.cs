@@ -98,8 +98,6 @@ namespace YazılımlabABRCB
             else if (ogretimuyesisilsicilnotxt.Text == "") MessageBox.Show("Sicil Numarası Girilmeden Silme İşlemi Gerçekleştirilemez");
         }
 
-        
-
         private void kullanıcıarabutton_Click(object sender, EventArgs e)
         {
             Globals.con.Open();
@@ -161,5 +159,19 @@ namespace YazılımlabABRCB
             }
 
         }
+
+        private void ogretimuyesilisteletab_Click(object sender, EventArgs e)
+        {
+            Globals.con.Open();
+            MySqlCommand listele = new MySqlCommand("select * from Kullanici", Globals.con);
+            var dr = listele.ExecuteReader();
+            while (dr.Read())
+            {
+                ogretimuyesilisteledgw.Rows.Add(dr.GetString(0), dr.GetString(1), dr.GetString(2), dr.GetString(3));
+            
+            }
+            dr.Close();
+            Globals.con.Close();
+        }   
     }
 }

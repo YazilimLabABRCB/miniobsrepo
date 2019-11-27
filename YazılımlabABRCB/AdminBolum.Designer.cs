@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.bolumgeributton = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.bolumlisteletab = new System.Windows.Forms.TabControl();
             this.bolumekle = new System.Windows.Forms.TabPage();
+            this.bolumeklekazanimrtxt = new System.Windows.Forms.RichTextBox();
+            this.bolumeklekazanimeklebutton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.bolumeklebutton = new System.Windows.Forms.Button();
             this.bolumeklebolumadtxt = new System.Windows.Forms.TextBox();
             this.bolumeklebolumnotxt = new System.Windows.Forms.TextBox();
@@ -56,15 +59,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.bolumgeributton2 = new System.Windows.Forms.Button();
             this.bolumlisteleme = new System.Windows.Forms.TabPage();
-            this.bolumgeributton3 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.bolumeklekazanimeklebutton = new System.Windows.Forms.Button();
-            this.bolumeklekazanimrtxt = new System.Windows.Forms.RichTextBox();
-            this.tabControl1.SuspendLayout();
+            this.bolumlisteledgw = new System.Windows.Forms.DataGridView();
+            this.bolumlistelefakulteno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bolumlistelefakultead = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bolumlistelebolumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bolumlistelebolumad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bolumlisteletab.SuspendLayout();
             this.bolumekle.SuspendLayout();
             this.bolumsilme.SuspendLayout();
             this.bolumguncelleme.SuspendLayout();
             this.bolumlisteleme.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bolumlisteledgw)).BeginInit();
             this.SuspendLayout();
             // 
             // bolumgeributton
@@ -77,18 +82,19 @@
             this.bolumgeributton.UseVisualStyleBackColor = true;
             this.bolumgeributton.Click += new System.EventHandler(this.bolumgeributton_Click);
             // 
-            // tabControl1
+            // bolumlisteletab
             // 
-            this.tabControl1.Controls.Add(this.bolumekle);
-            this.tabControl1.Controls.Add(this.bolumsilme);
-            this.tabControl1.Controls.Add(this.bolumguncelleme);
-            this.tabControl1.Controls.Add(this.bolumlisteleme);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(418, 500);
-            this.tabControl1.TabIndex = 5;
+            this.bolumlisteletab.Controls.Add(this.bolumekle);
+            this.bolumlisteletab.Controls.Add(this.bolumsilme);
+            this.bolumlisteletab.Controls.Add(this.bolumguncelleme);
+            this.bolumlisteletab.Controls.Add(this.bolumlisteleme);
+            this.bolumlisteletab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bolumlisteletab.Location = new System.Drawing.Point(0, 0);
+            this.bolumlisteletab.Name = "bolumlisteletab";
+            this.bolumlisteletab.SelectedIndex = 0;
+            this.bolumlisteletab.Size = new System.Drawing.Size(748, 580);
+            this.bolumlisteletab.TabIndex = 5;
+            this.bolumlisteletab.Click += new System.EventHandler(this.bolumlisteletab_Click);
             // 
             // bolumekle
             // 
@@ -110,6 +116,33 @@
             this.bolumekle.TabIndex = 0;
             this.bolumekle.Text = "Bölüm Ekleme";
             this.bolumekle.UseVisualStyleBackColor = true;
+            // 
+            // bolumeklekazanimrtxt
+            // 
+            this.bolumeklekazanimrtxt.Location = new System.Drawing.Point(120, 291);
+            this.bolumeklekazanimrtxt.Name = "bolumeklekazanimrtxt";
+            this.bolumeklekazanimrtxt.Size = new System.Drawing.Size(191, 96);
+            this.bolumeklekazanimrtxt.TabIndex = 15;
+            this.bolumeklekazanimrtxt.Text = "";
+            // 
+            // bolumeklekazanimeklebutton
+            // 
+            this.bolumeklekazanimeklebutton.Location = new System.Drawing.Point(163, 409);
+            this.bolumeklekazanimeklebutton.Name = "bolumeklekazanimeklebutton";
+            this.bolumeklekazanimeklebutton.Size = new System.Drawing.Size(100, 23);
+            this.bolumeklekazanimeklebutton.TabIndex = 14;
+            this.bolumeklekazanimeklebutton.Text = "Kazanım Ekle";
+            this.bolumeklekazanimeklebutton.UseVisualStyleBackColor = true;
+            this.bolumeklekazanimeklebutton.Click += new System.EventHandler(this.bolumeklekazanimbutton_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 294);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Kazanım Adı";
             // 
             // bolumeklebutton
             // 
@@ -335,61 +368,65 @@
             // 
             // bolumlisteleme
             // 
-            this.bolumlisteleme.Controls.Add(this.bolumgeributton3);
+            this.bolumlisteleme.Controls.Add(this.bolumlisteledgw);
             this.bolumlisteleme.Location = new System.Drawing.Point(4, 22);
             this.bolumlisteleme.Name = "bolumlisteleme";
-            this.bolumlisteleme.Size = new System.Drawing.Size(410, 474);
+            this.bolumlisteleme.Size = new System.Drawing.Size(740, 554);
             this.bolumlisteleme.TabIndex = 3;
             this.bolumlisteleme.Text = "Bölüm Listeleme";
             this.bolumlisteleme.UseVisualStyleBackColor = true;
             // 
-            // bolumgeributton3
+            // bolumlisteledgw
             // 
-            this.bolumgeributton3.Location = new System.Drawing.Point(338, 422);
-            this.bolumgeributton3.Name = "bolumgeributton3";
-            this.bolumgeributton3.Size = new System.Drawing.Size(72, 52);
-            this.bolumgeributton3.TabIndex = 5;
-            this.bolumgeributton3.Text = "Geri ";
-            this.bolumgeributton3.UseVisualStyleBackColor = true;
-            this.bolumgeributton3.Click += new System.EventHandler(this.bolumgeributton3_Click);
+            this.bolumlisteledgw.AllowUserToAddRows = false;
+            this.bolumlisteledgw.AllowUserToDeleteRows = false;
+            this.bolumlisteledgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bolumlisteledgw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bolumlistelefakulteno,
+            this.bolumlistelefakultead,
+            this.bolumlistelebolumno,
+            this.bolumlistelebolumad});
+            this.bolumlisteledgw.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bolumlisteledgw.Location = new System.Drawing.Point(0, 0);
+            this.bolumlisteledgw.Name = "bolumlisteledgw";
+            this.bolumlisteledgw.ReadOnly = true;
+            this.bolumlisteledgw.Size = new System.Drawing.Size(740, 554);
+            this.bolumlisteledgw.TabIndex = 6;
             // 
-            // label6
+            // bolumlistelefakulteno
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 294);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Kazanım Adı";
+            this.bolumlistelefakulteno.HeaderText = "Fakülte No";
+            this.bolumlistelefakulteno.Name = "bolumlistelefakulteno";
+            this.bolumlistelefakulteno.ReadOnly = true;
             // 
-            // bolumeklekazanimeklebutton
+            // bolumlistelefakultead
             // 
-            this.bolumeklekazanimeklebutton.Location = new System.Drawing.Point(163, 409);
-            this.bolumeklekazanimeklebutton.Name = "bolumeklekazanimeklebutton";
-            this.bolumeklekazanimeklebutton.Size = new System.Drawing.Size(100, 23);
-            this.bolumeklekazanimeklebutton.TabIndex = 14;
-            this.bolumeklekazanimeklebutton.Text = "Kazanım Ekle";
-            this.bolumeklekazanimeklebutton.UseVisualStyleBackColor = true;
-            this.bolumeklekazanimeklebutton.Click += new System.EventHandler(this.bolumeklekazanimbutton_Click);
+            this.bolumlistelefakultead.HeaderText = "Fakülte Adı";
+            this.bolumlistelefakultead.Name = "bolumlistelefakultead";
+            this.bolumlistelefakultead.ReadOnly = true;
             // 
-            // bolumeklekazanimrtxt
+            // bolumlistelebolumno
             // 
-            this.bolumeklekazanimrtxt.Location = new System.Drawing.Point(120, 291);
-            this.bolumeklekazanimrtxt.Name = "bolumeklekazanimrtxt";
-            this.bolumeklekazanimrtxt.Size = new System.Drawing.Size(191, 96);
-            this.bolumeklekazanimrtxt.TabIndex = 15;
-            this.bolumeklekazanimrtxt.Text = "";
+            this.bolumlistelebolumno.HeaderText = "Bölüm No";
+            this.bolumlistelebolumno.Name = "bolumlistelebolumno";
+            this.bolumlistelebolumno.ReadOnly = true;
+            // 
+            // bolumlistelebolumad
+            // 
+            this.bolumlistelebolumad.HeaderText = "Bölüm Adı";
+            this.bolumlistelebolumad.Name = "bolumlistelebolumad";
+            this.bolumlistelebolumad.ReadOnly = true;
             // 
             // AdminBolum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 500);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(748, 580);
+            this.Controls.Add(this.bolumlisteletab);
             this.Name = "AdminBolum";
             this.Text = "AdminBolum";
             this.Load += new System.EventHandler(this.AdminBolum_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.bolumlisteletab.ResumeLayout(false);
             this.bolumekle.ResumeLayout(false);
             this.bolumekle.PerformLayout();
             this.bolumsilme.ResumeLayout(false);
@@ -397,20 +434,20 @@
             this.bolumguncelleme.ResumeLayout(false);
             this.bolumguncelleme.PerformLayout();
             this.bolumlisteleme.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bolumlisteledgw)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button bolumgeributton;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl bolumlisteletab;
         private System.Windows.Forms.TabPage bolumekle;
         private System.Windows.Forms.TabPage bolumsilme;
         private System.Windows.Forms.TabPage bolumguncelleme;
         private System.Windows.Forms.TabPage bolumlisteleme;
         private System.Windows.Forms.Button bolumgeributton1;
         private System.Windows.Forms.Button bolumgeributton2;
-        private System.Windows.Forms.Button bolumgeributton3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -434,5 +471,10 @@
         private System.Windows.Forms.RichTextBox bolumeklekazanimrtxt;
         private System.Windows.Forms.Button bolumeklekazanimeklebutton;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView bolumlisteledgw;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bolumlistelefakulteno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bolumlistelefakultead;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bolumlistelebolumno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bolumlistelebolumad;
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.donemgeributton = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.donemlisteletab = new System.Windows.Forms.TabControl();
             this.donemekleme = new System.Windows.Forms.TabPage();
             this.donemekledonemidtxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,19 +41,24 @@
             this.donemsildonemidtxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.donemgüncelleme = new System.Windows.Forms.TabPage();
-            this.donemarabutton = new System.Windows.Forms.Button();
-            this.donemaradonemidtxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.donemlisteleme = new System.Windows.Forms.TabPage();
             this.donemguncelledonemidtxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.donemguncellebutton = new System.Windows.Forms.Button();
             this.donemguncelledonemadtxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.donemarabutton = new System.Windows.Forms.Button();
+            this.donemaradonemidtxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.donemlisteleme = new System.Windows.Forms.TabPage();
+            this.donemlisteledgw = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donemlisteletab.SuspendLayout();
             this.donemekleme.SuspendLayout();
             this.donemsilme.SuspendLayout();
             this.donemgüncelleme.SuspendLayout();
+            this.donemlisteleme.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.donemlisteledgw)).BeginInit();
             this.SuspendLayout();
             // 
             // donemgeributton
@@ -66,18 +71,19 @@
             this.donemgeributton.UseVisualStyleBackColor = true;
             this.donemgeributton.Click += new System.EventHandler(this.donemgeributton_Click);
             // 
-            // tabControl1
+            // donemlisteletab
             // 
-            this.tabControl1.Controls.Add(this.donemekleme);
-            this.tabControl1.Controls.Add(this.donemsilme);
-            this.tabControl1.Controls.Add(this.donemgüncelleme);
-            this.tabControl1.Controls.Add(this.donemlisteleme);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(466, 554);
-            this.tabControl1.TabIndex = 9;
+            this.donemlisteletab.Controls.Add(this.donemekleme);
+            this.donemlisteletab.Controls.Add(this.donemsilme);
+            this.donemlisteletab.Controls.Add(this.donemgüncelleme);
+            this.donemlisteletab.Controls.Add(this.donemlisteleme);
+            this.donemlisteletab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.donemlisteletab.Location = new System.Drawing.Point(0, 0);
+            this.donemlisteletab.Name = "donemlisteletab";
+            this.donemlisteletab.SelectedIndex = 0;
+            this.donemlisteletab.Size = new System.Drawing.Size(527, 556);
+            this.donemlisteletab.TabIndex = 9;
+            this.donemlisteletab.Click += new System.EventHandler(this.donemlisteletab_Click);
             // 
             // donemekleme
             // 
@@ -193,41 +199,6 @@
             this.donemgüncelleme.Text = "Dönem Güncelleme";
             this.donemgüncelleme.UseVisualStyleBackColor = true;
             // 
-            // donemarabutton
-            // 
-            this.donemarabutton.Location = new System.Drawing.Point(217, 159);
-            this.donemarabutton.Name = "donemarabutton";
-            this.donemarabutton.Size = new System.Drawing.Size(75, 23);
-            this.donemarabutton.TabIndex = 20;
-            this.donemarabutton.Text = "Ara";
-            this.donemarabutton.UseVisualStyleBackColor = true;
-            this.donemarabutton.Click += new System.EventHandler(this.donemarabutton_Click);
-            // 
-            // donemaradonemidtxt
-            // 
-            this.donemaradonemidtxt.Location = new System.Drawing.Point(207, 106);
-            this.donemaradonemidtxt.Name = "donemaradonemidtxt";
-            this.donemaradonemidtxt.Size = new System.Drawing.Size(100, 20);
-            this.donemaradonemidtxt.TabIndex = 19;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(94, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Dönem id";
-            // 
-            // donemlisteleme
-            // 
-            this.donemlisteleme.Location = new System.Drawing.Point(4, 22);
-            this.donemlisteleme.Name = "donemlisteleme";
-            this.donemlisteleme.Size = new System.Drawing.Size(458, 528);
-            this.donemlisteleme.TabIndex = 3;
-            this.donemlisteleme.Text = "Dönem Listeleme";
-            this.donemlisteleme.UseVisualStyleBackColor = true;
-            // 
             // donemguncelledonemidtxt
             // 
             this.donemguncelledonemidtxt.Location = new System.Drawing.Point(207, 230);
@@ -270,29 +241,91 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "Donem ad";
             // 
+            // donemarabutton
+            // 
+            this.donemarabutton.Location = new System.Drawing.Point(217, 159);
+            this.donemarabutton.Name = "donemarabutton";
+            this.donemarabutton.Size = new System.Drawing.Size(75, 23);
+            this.donemarabutton.TabIndex = 20;
+            this.donemarabutton.Text = "Ara";
+            this.donemarabutton.UseVisualStyleBackColor = true;
+            this.donemarabutton.Click += new System.EventHandler(this.donemarabutton_Click);
+            // 
+            // donemaradonemidtxt
+            // 
+            this.donemaradonemidtxt.Location = new System.Drawing.Point(207, 106);
+            this.donemaradonemidtxt.Name = "donemaradonemidtxt";
+            this.donemaradonemidtxt.Size = new System.Drawing.Size(100, 20);
+            this.donemaradonemidtxt.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(94, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Dönem id";
+            // 
+            // donemlisteleme
+            // 
+            this.donemlisteleme.Controls.Add(this.donemlisteledgw);
+            this.donemlisteleme.Location = new System.Drawing.Point(4, 22);
+            this.donemlisteleme.Name = "donemlisteleme";
+            this.donemlisteleme.Size = new System.Drawing.Size(519, 530);
+            this.donemlisteleme.TabIndex = 3;
+            this.donemlisteleme.Text = "Dönem Listeleme";
+            this.donemlisteleme.UseVisualStyleBackColor = true;
+            // 
+            // donemlisteledgw
+            // 
+            this.donemlisteledgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.donemlisteledgw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.donemlisteledgw.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.donemlisteledgw.Location = new System.Drawing.Point(0, 0);
+            this.donemlisteledgw.Name = "donemlisteledgw";
+            this.donemlisteledgw.Size = new System.Drawing.Size(519, 530);
+            this.donemlisteledgw.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Dönem ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column2.HeaderText = "Dönem Adı";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 84;
+            // 
             // AdminDonem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 554);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(527, 556);
+            this.Controls.Add(this.donemlisteletab);
             this.Name = "AdminDonem";
             this.Text = "AdminDonem";
             this.Load += new System.EventHandler(this.AdminDonem_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.donemlisteletab.ResumeLayout(false);
             this.donemekleme.ResumeLayout(false);
             this.donemekleme.PerformLayout();
             this.donemsilme.ResumeLayout(false);
             this.donemsilme.PerformLayout();
             this.donemgüncelleme.ResumeLayout(false);
             this.donemgüncelleme.PerformLayout();
+            this.donemlisteleme.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.donemlisteledgw)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button donemgeributton;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl donemlisteletab;
         private System.Windows.Forms.TabPage donemekleme;
         private System.Windows.Forms.TabPage donemsilme;
         private System.Windows.Forms.TabPage donemgüncelleme;
@@ -313,5 +346,8 @@
         private System.Windows.Forms.Button donemguncellebutton;
         private System.Windows.Forms.TextBox donemguncelledonemadtxt;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView donemlisteledgw;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

@@ -201,5 +201,22 @@ namespace YazılımlabABRCB
             else if (bolumeklekazanimrtxt.Text == "") MessageBox.Show("Kazanim Alanı Boş Bırakılamaz");
            
         }
+
+        private void bolumlisteletab_Click(object sender, EventArgs e)
+        {
+            Globals.con.Open();
+            MySqlCommand listele = new MySqlCommand("select * from `bolumliste` ", Globals.con);
+
+            var rd = listele.ExecuteReader();
+            while (rd.Read())
+            {
+                
+                bolumlisteledgw.Rows.Add(rd.GetString(1), rd.GetString(3), rd.GetString(0), rd.GetString(2));
+             
+            }
+            
+            Globals.con.Close();
+            rd.Close();
+        }
     }
 }

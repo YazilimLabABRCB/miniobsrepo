@@ -148,5 +148,22 @@ namespace YazılımlabABRCB
                 }
             }
         }
+
+        private void donemlisteletab_Click(object sender, EventArgs e)
+        {
+            Globals.con.Open();
+            MySqlCommand listele = new MySqlCommand("select * from `Donem` ", Globals.con);
+
+            var rd = listele.ExecuteReader();
+            while (rd.Read())
+            {
+                
+                donemlisteledgw.Rows.Add(rd.GetString(0), rd.GetString(1));
+
+            }
+
+            Globals.con.Close();
+            rd.Close();
+        }
     }
 }

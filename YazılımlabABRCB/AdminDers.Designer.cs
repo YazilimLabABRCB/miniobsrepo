@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.dersgeributton = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.derslisteletab = new System.Windows.Forms.TabControl();
             this.dersekleme = new System.Windows.Forms.TabPage();
+            this.derseklekazanimeklebutton = new System.Windows.Forms.Button();
+            this.derseklekazanimrtxt = new System.Windows.Forms.RichTextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.derseklebutton = new System.Windows.Forms.Button();
             this.dersekledersadıtxt = new System.Windows.Forms.TextBox();
             this.derseklederskodutxt = new System.Windows.Forms.TextBox();
@@ -60,15 +63,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.derslisteleme = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.derseklekazanimrtxt = new System.Windows.Forms.RichTextBox();
-            this.derseklekazanimeklebutton = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
+            this.derslisteledgw = new System.Windows.Forms.DataGridView();
+            this.derslistelefakulteno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.derslistelefaukltead = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.derslistelebolumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.derslistelebolumad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.derslistelederskodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.derslistledersad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.derslisteletab.SuspendLayout();
             this.dersekleme.SuspendLayout();
             this.derssilme.SuspendLayout();
             this.dersgüncelleme.SuspendLayout();
             this.derslisteleme.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.derslisteledgw)).BeginInit();
             this.SuspendLayout();
             // 
             // dersgeributton
@@ -81,18 +88,19 @@
             this.dersgeributton.UseVisualStyleBackColor = true;
             this.dersgeributton.Click += new System.EventHandler(this.dersgeributton_Click);
             // 
-            // tabControl1
+            // derslisteletab
             // 
-            this.tabControl1.Controls.Add(this.dersekleme);
-            this.tabControl1.Controls.Add(this.derssilme);
-            this.tabControl1.Controls.Add(this.dersgüncelleme);
-            this.tabControl1.Controls.Add(this.derslisteleme);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(473, 549);
-            this.tabControl1.TabIndex = 9;
+            this.derslisteletab.Controls.Add(this.dersekleme);
+            this.derslisteletab.Controls.Add(this.derssilme);
+            this.derslisteletab.Controls.Add(this.dersgüncelleme);
+            this.derslisteletab.Controls.Add(this.derslisteleme);
+            this.derslisteletab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.derslisteletab.Location = new System.Drawing.Point(0, 0);
+            this.derslisteletab.Name = "derslisteletab";
+            this.derslisteletab.SelectedIndex = 0;
+            this.derslisteletab.Size = new System.Drawing.Size(858, 581);
+            this.derslisteletab.TabIndex = 9;
+            this.derslisteletab.Click += new System.EventHandler(this.derslisteletab_Click);
             // 
             // dersekleme
             // 
@@ -112,10 +120,37 @@
             this.dersekleme.Location = new System.Drawing.Point(4, 22);
             this.dersekleme.Name = "dersekleme";
             this.dersekleme.Padding = new System.Windows.Forms.Padding(3);
-            this.dersekleme.Size = new System.Drawing.Size(465, 523);
+            this.dersekleme.Size = new System.Drawing.Size(773, 553);
             this.dersekleme.TabIndex = 0;
             this.dersekleme.Text = "Ders Ekleme";
             this.dersekleme.UseVisualStyleBackColor = true;
+            // 
+            // derseklekazanimeklebutton
+            // 
+            this.derseklekazanimeklebutton.Location = new System.Drawing.Point(212, 416);
+            this.derseklekazanimeklebutton.Name = "derseklekazanimeklebutton";
+            this.derseklekazanimeklebutton.Size = new System.Drawing.Size(100, 23);
+            this.derseklekazanimeklebutton.TabIndex = 20;
+            this.derseklekazanimeklebutton.Text = "Kazanım Ekle";
+            this.derseklekazanimeklebutton.UseVisualStyleBackColor = true;
+            this.derseklekazanimeklebutton.Click += new System.EventHandler(this.derseklekazanimeklebutton_Click);
+            // 
+            // derseklekazanimrtxt
+            // 
+            this.derseklekazanimrtxt.Location = new System.Drawing.Point(163, 283);
+            this.derseklekazanimrtxt.Name = "derseklekazanimrtxt";
+            this.derseklekazanimrtxt.Size = new System.Drawing.Size(181, 113);
+            this.derseklekazanimrtxt.TabIndex = 19;
+            this.derseklekazanimrtxt.Text = "";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(66, 286);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 13);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Kazanım Adı";
             // 
             // derseklebutton
             // 
@@ -200,7 +235,7 @@
             this.derssilme.Location = new System.Drawing.Point(4, 22);
             this.derssilme.Name = "derssilme";
             this.derssilme.Padding = new System.Windows.Forms.Padding(3);
-            this.derssilme.Size = new System.Drawing.Size(465, 523);
+            this.derssilme.Size = new System.Drawing.Size(773, 553);
             this.derssilme.TabIndex = 1;
             this.derssilme.Text = "Ders Silme";
             this.derssilme.UseVisualStyleBackColor = true;
@@ -257,7 +292,7 @@
             this.dersgüncelleme.Controls.Add(this.button2);
             this.dersgüncelleme.Location = new System.Drawing.Point(4, 22);
             this.dersgüncelleme.Name = "dersgüncelleme";
-            this.dersgüncelleme.Size = new System.Drawing.Size(465, 523);
+            this.dersgüncelleme.Size = new System.Drawing.Size(773, 553);
             this.dersgüncelleme.TabIndex = 2;
             this.dersgüncelleme.Text = "Ders Güncelleme";
             this.dersgüncelleme.UseVisualStyleBackColor = true;
@@ -373,60 +408,85 @@
             // 
             // derslisteleme
             // 
-            this.derslisteleme.Controls.Add(this.button3);
+            this.derslisteleme.Controls.Add(this.derslisteledgw);
             this.derslisteleme.Location = new System.Drawing.Point(4, 22);
             this.derslisteleme.Name = "derslisteleme";
-            this.derslisteleme.Size = new System.Drawing.Size(465, 523);
+            this.derslisteleme.Size = new System.Drawing.Size(850, 555);
             this.derslisteleme.TabIndex = 3;
             this.derslisteleme.Text = "Ders Listeleme";
             this.derslisteleme.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // derslisteledgw
             // 
-            this.button3.Location = new System.Drawing.Point(393, 471);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(72, 52);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Geri ";
-            this.button3.UseVisualStyleBackColor = true;
+            this.derslisteledgw.AllowUserToAddRows = false;
+            this.derslisteledgw.AllowUserToDeleteRows = false;
+            this.derslisteledgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.derslisteledgw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.derslistelefakulteno,
+            this.derslistelefaukltead,
+            this.derslistelebolumno,
+            this.derslistelebolumad,
+            this.derslistelederskodu,
+            this.derslistledersad});
+            this.derslisteledgw.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.derslisteledgw.Location = new System.Drawing.Point(0, 0);
+            this.derslisteledgw.Name = "derslisteledgw";
+            this.derslisteledgw.ReadOnly = true;
+            this.derslisteledgw.Size = new System.Drawing.Size(850, 555);
+            this.derslisteledgw.TabIndex = 10;
             // 
-            // label11
+            // derslistelefakulteno
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(66, 286);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Kazanım Adı";
+            this.derslistelefakulteno.HeaderText = "Fakülte No";
+            this.derslistelefakulteno.Name = "derslistelefakulteno";
+            this.derslistelefakulteno.ReadOnly = true;
             // 
-            // derseklekazanimrtxt
+            // derslistelefaukltead
             // 
-            this.derseklekazanimrtxt.Location = new System.Drawing.Point(163, 283);
-            this.derseklekazanimrtxt.Name = "derseklekazanimrtxt";
-            this.derseklekazanimrtxt.Size = new System.Drawing.Size(181, 113);
-            this.derseklekazanimrtxt.TabIndex = 19;
-            this.derseklekazanimrtxt.Text = "";
+            this.derslistelefaukltead.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.derslistelefaukltead.HeaderText = "Fakülte Adı";
+            this.derslistelefaukltead.Name = "derslistelefaukltead";
+            this.derslistelefaukltead.ReadOnly = true;
+            this.derslistelefaukltead.Width = 85;
             // 
-            // derseklekazanimeklebutton
+            // derslistelebolumno
             // 
-            this.derseklekazanimeklebutton.Location = new System.Drawing.Point(212, 416);
-            this.derseklekazanimeklebutton.Name = "derseklekazanimeklebutton";
-            this.derseklekazanimeklebutton.Size = new System.Drawing.Size(100, 23);
-            this.derseklekazanimeklebutton.TabIndex = 20;
-            this.derseklekazanimeklebutton.Text = "Kazanım Ekle";
-            this.derseklekazanimeklebutton.UseVisualStyleBackColor = true;
-            this.derseklekazanimeklebutton.Click += new System.EventHandler(this.derseklekazanimeklebutton_Click);
+            this.derslistelebolumno.HeaderText = "Bölüm No";
+            this.derslistelebolumno.Name = "derslistelebolumno";
+            this.derslistelebolumno.ReadOnly = true;
+            // 
+            // derslistelebolumad
+            // 
+            this.derslistelebolumad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.derslistelebolumad.HeaderText = "Bölüm Adı";
+            this.derslistelebolumad.Name = "derslistelebolumad";
+            this.derslistelebolumad.ReadOnly = true;
+            this.derslistelebolumad.Width = 79;
+            // 
+            // derslistelederskodu
+            // 
+            this.derslistelederskodu.HeaderText = "Ders Kodu";
+            this.derslistelederskodu.Name = "derslistelederskodu";
+            this.derslistelederskodu.ReadOnly = true;
+            // 
+            // derslistledersad
+            // 
+            this.derslistledersad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.derslistledersad.HeaderText = "Ders Adı";
+            this.derslistledersad.Name = "derslistledersad";
+            this.derslistledersad.ReadOnly = true;
+            this.derslistledersad.Width = 72;
             // 
             // AdminDers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 549);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(858, 581);
+            this.Controls.Add(this.derslisteletab);
             this.Name = "AdminDers";
             this.Text = "AdminDers";
             this.Load += new System.EventHandler(this.AdminDers_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.derslisteletab.ResumeLayout(false);
             this.dersekleme.ResumeLayout(false);
             this.dersekleme.PerformLayout();
             this.derssilme.ResumeLayout(false);
@@ -434,20 +494,20 @@
             this.dersgüncelleme.ResumeLayout(false);
             this.dersgüncelleme.PerformLayout();
             this.derslisteleme.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.derslisteledgw)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button dersgeributton;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl derslisteletab;
         private System.Windows.Forms.TabPage dersekleme;
         private System.Windows.Forms.TabPage derssilme;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage dersgüncelleme;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabPage derslisteleme;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -475,5 +535,12 @@
         private System.Windows.Forms.Button derseklekazanimeklebutton;
         private System.Windows.Forms.RichTextBox derseklekazanimrtxt;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView derslisteledgw;
+        private System.Windows.Forms.DataGridViewTextBoxColumn derslistelefakulteno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn derslistelefaukltead;
+        private System.Windows.Forms.DataGridViewTextBoxColumn derslistelebolumno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn derslistelebolumad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn derslistelederskodu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn derslistledersad;
     }
 }

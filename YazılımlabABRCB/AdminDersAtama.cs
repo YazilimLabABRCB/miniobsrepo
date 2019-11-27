@@ -159,6 +159,23 @@ namespace YazılımlabABRCB
                 }
             }
         }
+
+        private void atamalisteletab_Click(object sender, EventArgs e)
+        {
+            Globals.con.Open();
+            MySqlCommand listele = new MySqlCommand("select * from `atamaliste` ", Globals.con);
+
+            var rd = listele.ExecuteReader();
+            while (rd.Read())
+            {
+                
+                atamalistedgw.Rows.Add(rd.GetString(0), rd.GetString(4), rd.GetString(5), rd.GetString(1), rd.GetString(6), rd.GetString(2), rd.GetString(7), rd.GetString(3), rd.GetString(8));
+
+            }
+
+            Globals.con.Close();
+            rd.Close();
+        }
     }
     }
 
