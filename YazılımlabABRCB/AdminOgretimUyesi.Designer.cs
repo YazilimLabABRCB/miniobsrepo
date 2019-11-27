@@ -41,14 +41,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ogretimuyesisilme = new System.Windows.Forms.TabPage();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.ogretimuyesisilsicilnotxt = new System.Windows.Forms.TextBox();
             this.ogretimuyesisilmebutton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.ogretimuyesigüncelleme = new System.Windows.Forms.TabPage();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.ogretimuyesiarasicilnotxt = new System.Windows.Forms.TextBox();
             this.kullanıcıarabutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.ogretimuyesilisteleme = new System.Windows.Forms.TabPage();
+            this.ogretimuyesiguncellebutton = new System.Windows.Forms.Button();
+            this.ogretimuyesiguncellesifretxt = new System.Windows.Forms.TextBox();
+            this.ogretimuyesiguncellesoyadtxt = new System.Windows.Forms.TextBox();
+            this.ogretimuyesiguncelleadtxt = new System.Windows.Forms.TextBox();
+            this.ogretimuyesiguncellesicilnotxt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.ogretimuyesiekleme.SuspendLayout();
             this.ogretimuyesisilme.SuspendLayout();
@@ -174,7 +183,7 @@
             // 
             // ogretimuyesisilme
             // 
-            this.ogretimuyesisilme.Controls.Add(this.textBox5);
+            this.ogretimuyesisilme.Controls.Add(this.ogretimuyesisilsicilnotxt);
             this.ogretimuyesisilme.Controls.Add(this.ogretimuyesisilmebutton);
             this.ogretimuyesisilme.Controls.Add(this.label5);
             this.ogretimuyesisilme.Location = new System.Drawing.Point(4, 22);
@@ -185,12 +194,12 @@
             this.ogretimuyesisilme.Text = "Öğretim Üyesi  Silme";
             this.ogretimuyesisilme.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // ogretimuyesisilsicilnotxt
             // 
-            this.textBox5.Location = new System.Drawing.Point(217, 137);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 2;
+            this.ogretimuyesisilsicilnotxt.Location = new System.Drawing.Point(217, 137);
+            this.ogretimuyesisilsicilnotxt.Name = "ogretimuyesisilsicilnotxt";
+            this.ogretimuyesisilsicilnotxt.Size = new System.Drawing.Size(100, 20);
+            this.ogretimuyesisilsicilnotxt.TabIndex = 2;
             // 
             // ogretimuyesisilmebutton
             // 
@@ -200,6 +209,7 @@
             this.ogretimuyesisilmebutton.TabIndex = 1;
             this.ogretimuyesisilmebutton.Text = "Sil";
             this.ogretimuyesisilmebutton.UseVisualStyleBackColor = true;
+            this.ogretimuyesisilmebutton.Click += new System.EventHandler(this.ogretimuyesisilmebutton_Click);
             // 
             // label5
             // 
@@ -212,7 +222,16 @@
             // 
             // ogretimuyesigüncelleme
             // 
-            this.ogretimuyesigüncelleme.Controls.Add(this.textBox6);
+            this.ogretimuyesigüncelleme.Controls.Add(this.ogretimuyesiguncellebutton);
+            this.ogretimuyesigüncelleme.Controls.Add(this.ogretimuyesiguncellesifretxt);
+            this.ogretimuyesigüncelleme.Controls.Add(this.ogretimuyesiguncellesoyadtxt);
+            this.ogretimuyesigüncelleme.Controls.Add(this.ogretimuyesiguncelleadtxt);
+            this.ogretimuyesigüncelleme.Controls.Add(this.ogretimuyesiguncellesicilnotxt);
+            this.ogretimuyesigüncelleme.Controls.Add(this.label7);
+            this.ogretimuyesigüncelleme.Controls.Add(this.label8);
+            this.ogretimuyesigüncelleme.Controls.Add(this.label9);
+            this.ogretimuyesigüncelleme.Controls.Add(this.label10);
+            this.ogretimuyesigüncelleme.Controls.Add(this.ogretimuyesiarasicilnotxt);
             this.ogretimuyesigüncelleme.Controls.Add(this.kullanıcıarabutton);
             this.ogretimuyesigüncelleme.Controls.Add(this.label6);
             this.ogretimuyesigüncelleme.Location = new System.Drawing.Point(4, 22);
@@ -222,26 +241,27 @@
             this.ogretimuyesigüncelleme.Text = "Öğretim Üyesi  Güncelleme";
             this.ogretimuyesigüncelleme.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // ogretimuyesiarasicilnotxt
             // 
-            this.textBox6.Location = new System.Drawing.Point(249, 227);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 5;
+            this.ogretimuyesiarasicilnotxt.Location = new System.Drawing.Point(209, 62);
+            this.ogretimuyesiarasicilnotxt.Name = "ogretimuyesiarasicilnotxt";
+            this.ogretimuyesiarasicilnotxt.Size = new System.Drawing.Size(100, 20);
+            this.ogretimuyesiarasicilnotxt.TabIndex = 5;
             // 
             // kullanıcıarabutton
             // 
-            this.kullanıcıarabutton.Location = new System.Drawing.Point(258, 283);
+            this.kullanıcıarabutton.Location = new System.Drawing.Point(218, 118);
             this.kullanıcıarabutton.Name = "kullanıcıarabutton";
             this.kullanıcıarabutton.Size = new System.Drawing.Size(75, 23);
             this.kullanıcıarabutton.TabIndex = 4;
             this.kullanıcıarabutton.Text = "Ara";
             this.kullanıcıarabutton.UseVisualStyleBackColor = true;
+            this.kullanıcıarabutton.Click += new System.EventHandler(this.kullanıcıarabutton_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(130, 227);
+            this.label6.Location = new System.Drawing.Point(90, 62);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 3;
@@ -256,6 +276,80 @@
             this.ogretimuyesilisteleme.Text = "Öğretim Üyesi  Listeleme";
             this.ogretimuyesilisteleme.UseVisualStyleBackColor = true;
             // 
+            // ogretimuyesiguncellebutton
+            // 
+            this.ogretimuyesiguncellebutton.Location = new System.Drawing.Point(223, 368);
+            this.ogretimuyesiguncellebutton.Name = "ogretimuyesiguncellebutton";
+            this.ogretimuyesiguncellebutton.Size = new System.Drawing.Size(75, 23);
+            this.ogretimuyesiguncellebutton.TabIndex = 27;
+            this.ogretimuyesiguncellebutton.Text = "Güncelle";
+            this.ogretimuyesiguncellebutton.UseVisualStyleBackColor = true;
+            this.ogretimuyesiguncellebutton.Click += new System.EventHandler(this.ogretimuyesiguncellebutton_Click);
+            // 
+            // ogretimuyesiguncellesifretxt
+            // 
+            this.ogretimuyesiguncellesifretxt.Location = new System.Drawing.Point(209, 314);
+            this.ogretimuyesiguncellesifretxt.Name = "ogretimuyesiguncellesifretxt";
+            this.ogretimuyesiguncellesifretxt.Size = new System.Drawing.Size(100, 20);
+            this.ogretimuyesiguncellesifretxt.TabIndex = 26;
+            // 
+            // ogretimuyesiguncellesoyadtxt
+            // 
+            this.ogretimuyesiguncellesoyadtxt.Location = new System.Drawing.Point(209, 277);
+            this.ogretimuyesiguncellesoyadtxt.Name = "ogretimuyesiguncellesoyadtxt";
+            this.ogretimuyesiguncellesoyadtxt.Size = new System.Drawing.Size(100, 20);
+            this.ogretimuyesiguncellesoyadtxt.TabIndex = 25;
+            // 
+            // ogretimuyesiguncelleadtxt
+            // 
+            this.ogretimuyesiguncelleadtxt.Location = new System.Drawing.Point(209, 244);
+            this.ogretimuyesiguncelleadtxt.Name = "ogretimuyesiguncelleadtxt";
+            this.ogretimuyesiguncelleadtxt.Size = new System.Drawing.Size(100, 20);
+            this.ogretimuyesiguncelleadtxt.TabIndex = 24;
+            // 
+            // ogretimuyesiguncellesicilnotxt
+            // 
+            this.ogretimuyesiguncellesicilnotxt.Location = new System.Drawing.Point(209, 207);
+            this.ogretimuyesiguncellesicilnotxt.Name = "ogretimuyesiguncellesicilnotxt";
+            this.ogretimuyesiguncellesicilnotxt.Size = new System.Drawing.Size(100, 20);
+            this.ogretimuyesiguncellesicilnotxt.TabIndex = 23;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(79, 314);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Öğretim Üyesi Şifre";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(79, 277);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Öğretim Üyesi Soyad";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(79, 244);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Öğretim Üyesi Ad";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(79, 207);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Sicil no";
+            // 
             // AdminOgretimUyesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +358,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "AdminOgretimUyesi";
             this.Text = "AdminKullanıcı";
+            this.Load += new System.EventHandler(this.AdminOgretimUyesi_Load);
             this.tabControl1.ResumeLayout(false);
             this.ogretimuyesiekleme.ResumeLayout(false);
             this.ogretimuyesiekleme.PerformLayout();
@@ -291,11 +386,20 @@
         private System.Windows.Forms.TabPage ogretimuyesisilme;
         private System.Windows.Forms.TabPage ogretimuyesigüncelleme;
         private System.Windows.Forms.TabPage ogretimuyesilisteleme;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox ogretimuyesisilsicilnotxt;
         private System.Windows.Forms.Button ogretimuyesisilmebutton;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox ogretimuyesiarasicilnotxt;
         private System.Windows.Forms.Button kullanıcıarabutton;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button ogretimuyesiguncellebutton;
+        private System.Windows.Forms.TextBox ogretimuyesiguncellesifretxt;
+        private System.Windows.Forms.TextBox ogretimuyesiguncellesoyadtxt;
+        private System.Windows.Forms.TextBox ogretimuyesiguncelleadtxt;
+        private System.Windows.Forms.TextBox ogretimuyesiguncellesicilnotxt;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

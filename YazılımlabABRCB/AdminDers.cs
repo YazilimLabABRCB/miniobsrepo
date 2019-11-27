@@ -25,6 +25,18 @@ namespace YazılımlabABRCB
             AdminHomePage.Show();
         }
 
+        private void AdminDers_Load(object sender, EventArgs e)
+        {
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
+            label10.Visible = false;
+            dersguncellefakultenotxt.Visible = false;
+            dersguncellebolumnotxt.Visible = false;
+            dersguncellederskodutxt.Visible = false;
+            dersguncelledersadtxt.Visible = false;
+            dersguncellebutton.Visible = false;
+        }
         private void derseklebutton_Click(object sender, EventArgs e)
         {
             if (derseklefakultenotxt.Text != "" && derseklebolumnotxt.Text != "" && derseklederskodutxt.Text != "" && dersekledersadıtxt.Text != "")
@@ -54,5 +66,97 @@ namespace YazılımlabABRCB
             else if (dersekledersadıtxt.Text == "") MessageBox.Show("Ders Adı Boş Bırakılamaz");
 
         }
+
+        private void derssilmebutton_Click(object sender, EventArgs e)
+        {
+            if (derssilderskodutxt.Text != "")
+            {
+                DialogResult cikis = new DialogResult();
+                object sonuc = null;
+                cikis = MessageBox.Show("Dersi Silmek İstediğinize Eminmisiniz?", "Uyarı", MessageBoxButtons.YesNo);
+                if (cikis == DialogResult.Yes)
+                {
+                    Globals.con.Open();
+                    MySqlCommand sil = new MySqlCommand("delete from `Ders` where ders_kodu =('" + derssilderskodutxt.Text + "')", Globals.con);
+
+
+                    sonuc = sil.ExecuteNonQuery();
+                    if (sonuc != null)
+                        MessageBox.Show("Ders Başarıyla Silindi");
+                    else
+                        MessageBox.Show("Ders Silinirken bir hata oluştu");
+                    Globals.con.Close();
+                    this.Hide();
+
+                }
+            }
+            else if (derssilderskodutxt.Text == "") MessageBox.Show("Ders Kodu Girilmeden Silme İşlemi Gerçekleştirilemez");
+
+        }
+
+        
+
+        private void dersarabutton_Click(object sender, EventArgs e)
+        {
+            Globals.con.Open();
+            MySqlCommand ara = new MySqlCommand("Select * from `Ders` where ders_kodu=('" + dersaraderskodutxt.Text + "')", Globals.con);
+
+            var rd = ara.ExecuteReader();
+            if (rd.Read())
+            {
+
+
+
+                rd.Close();
+                ara.CommandText = "select fakulte_no,bolum_no,ders_kodu,ders_ad from `Ders` where ders_kodu='" + dersaraderskodutxt.Text + "' ";
+                var dr = ara.ExecuteReader();
+                dr.Read();
+                dersguncellefakultenotxt.Text = dr.GetString(0);
+                dersguncellebolumnotxt.Text = dr.GetString(1);
+                dersguncellederskodutxt.Text = dr.GetString(2);
+                dersguncelledersadtxt.Text = dr.GetString(3);
+
+            }
+            else MessageBox.Show("Bölüm Bulunamadı");
+            Globals.con.Close();
+            rd.Close();
+
+            label7.Visible = true;
+            label8.Visible = true;
+            label9.Visible = true;
+            label10.Visible = true;
+            dersguncellefakultenotxt.Visible = true;
+            dersguncellebolumnotxt.Visible = true;
+            dersguncellederskodutxt.Visible = true;
+            dersguncelledersadtxt.Visible = true;
+            dersguncellebutton.Visible = true;
+
+        }
+
+        private void dersguncellebutton_Click(object sender, EventArgs e)
+        {
+            if (dersguncellefakultenotxt.Text != "" && dersguncellebolumnotxt.Text != "" && dersguncellederskodutxt.Text != "" && dersguncelledersadtxt.Text != "")
+            {
+                DialogResult cikis = new DialogResult();
+                object sonuc = null;
+                cikis = MessageBox.Show("Dersi Güncellemek İstediğinizie Eminmisiniz?", "Uyarı", MessageBoxButtons.YesNo);
+                if (cikis == DialogResult.Yes)
+                {
+                    Globals.con.Open();
+                    MySqlCommand guncelle = new MySqlCommand("update `Ders` set  fakulte_no =" + dersguncellefakultenotxt.Text + ", bolum_no=" + dersguncellebolumnotxt.Text + ",ders_kodu='" + dersguncellederskodutxt.Text + "',ders_ad='" + dersguncelledersadtxt.Text + "' where ders_kodu=(" + dersaraderskodutxt.Text + ")", Globals.con);
+
+
+                    sonuc = guncelle.ExecuteNonQuery();
+                    if (sonuc != null)
+                        MessageBox.Show("Ders Başarıyla Güncellendi");
+                    else
+                        MessageBox.Show("Ders Güncellenirken bir hata oluştu");
+                    Globals.con.Close();
+                    this.Hide();
+
+                }
+            }
+        }
     }
-}
+    }
+
